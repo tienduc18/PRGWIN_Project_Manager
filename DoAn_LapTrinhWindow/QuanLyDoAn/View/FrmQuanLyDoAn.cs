@@ -20,7 +20,7 @@ namespace QuanLyDoAn.View
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            using (var _context = new DBQuanLyDoAn())
+            using (var _context = new QuanLyDeTaiEntities())
             {
                 var x = from u in _context.SinhViens
 

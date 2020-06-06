@@ -25,7 +25,7 @@ namespace QuanLyDoAn.View
             string quequan = txtQueQuan.Text;
             string chuyennganh = txtChuyenNganh.Text;
             string namnhaphoc = txtNamNhapHoc.Text;
-            using (var _context = new DBQuanLyDoAn())
+            using (var _context = new QuanLyDeTaiEntities())
             {
                 var x = from u in _context.SinhViens
                         where u.Mssv.Contains(mssv) && u.HoTen.Contains(name) && u.GioiTinh.Contains(gioitinh) && u.QueQuan.Contains(quequan) && u.IDChuyenNganh.Contains(chuyennganh) && u.NamNhapHoc.Contains(namnhaphoc)

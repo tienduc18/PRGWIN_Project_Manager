@@ -13,10 +13,10 @@ namespace QuanLyDoAn
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBQuanLyDoAn : DbContext
+    public partial class QuanLyDeTaiEntities : DbContext
     {
-        public DBQuanLyDoAn()
-            : base("name=DBQuanLyDoAn")
+        public QuanLyDeTaiEntities()
+            : base("name=QuanLyDeTaiEntities")
         {
         }
     
@@ -30,8 +30,8 @@ namespace QuanLyDoAn
         public virtual DbSet<DoAnTotNghiep> DoAnTotNghieps { get; set; }
         public virtual DbSet<GiangVien> GiangViens { get; set; }
         public virtual DbSet<MonHoc> MonHocs { get; set; }
+        public virtual DbSet<Nhom> Nhoms { get; set; }
         public virtual DbSet<SinhVien> SinhViens { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TieuLuanChuyenNganh> TieuLuanChuyenNganhs { get; set; }
     }
 }

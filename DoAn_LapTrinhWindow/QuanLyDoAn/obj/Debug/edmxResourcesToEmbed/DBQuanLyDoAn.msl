@@ -1,102 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QuanLyDoAnModelStoreContainer" CdmEntityContainer="DBQuanLyDoAn">
+  <EntityContainerMapping StorageEntityContainer="QuanLyDeTaiModelStoreContainer" CdmEntityContainer="QuanLyDeTaiEntities">
     <EntitySetMapping Name="ChuyenNganhs">
-      <EntityTypeMapping TypeName="QuanLyDoAnModel.ChuyenNganh">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.ChuyenNganh">
         <MappingFragment StoreEntitySet="ChuyenNganh">
-          <ScalarProperty Name="TenChuyenNganh" ColumnName="TenChuyenNganh" />
           <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
+          <ScalarProperty Name="TenChuyenNganh" ColumnName="TenChuyenNganh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DoAnMonHocs">
-      <EntityTypeMapping TypeName="QuanLyDoAnModel.DoAnMonHoc">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.DoAnMonHoc">
         <MappingFragment StoreEntitySet="DoAnMonHoc">
-          <ScalarProperty Name="MSSV" ColumnName="MSSV" />
-          <ScalarProperty Name="Diem" ColumnName="Diem" />
-          <ScalarProperty Name="Check" ColumnName="Check" />
-          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
-          <ScalarProperty Name="TienDo" ColumnName="TienDo" />
-          <ScalarProperty Name="TenDeTai" ColumnName="TenDeTai" />
-          <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+          <ScalarProperty Name="TenDeTai" ColumnName="TenDeTai" />
+          <ScalarProperty Name="TienDo" ColumnName="TienDo" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="Check" ColumnName="Check" />
+          <ScalarProperty Name="Diem" ColumnName="Diem" />
+          <ScalarProperty Name="MSSV" ColumnName="MSSV" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DoAnTotNghieps">
-      <EntityTypeMapping TypeName="QuanLyDoAnModel.DoAnTotNghiep">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.DoAnTotNghiep">
         <MappingFragment StoreEntitySet="DoAnTotNghiep">
-          <ScalarProperty Name="Diem" ColumnName="Diem" />
-          <ScalarProperty Name="Check" ColumnName="Check" />
-          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
-          <ScalarProperty Name="TienDo" ColumnName="TienDo" />
-          <ScalarProperty Name="GVHD" ColumnName="GVHD" />
-          <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
-          <ScalarProperty Name="TenDeTai" ColumnName="TenDeTai" />
-          <ScalarProperty Name="Mssv" ColumnName="Mssv" />
           <ScalarProperty Name="MaDATN" ColumnName="MaDATN" />
+          <ScalarProperty Name="Mssv" ColumnName="Mssv" />
+          <ScalarProperty Name="TenDeTai" ColumnName="TenDeTai" />
+          <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
+          <ScalarProperty Name="GVHD" ColumnName="GVHD" />
+          <ScalarProperty Name="TienDo" ColumnName="TienDo" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="Check" ColumnName="Check" />
+          <ScalarProperty Name="Diem" ColumnName="Diem" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="GiangViens">
-      <EntityTypeMapping TypeName="QuanLyDoAnModel.GiangVien">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.GiangVien">
         <MappingFragment StoreEntitySet="GiangVien">
-          <ScalarProperty Name="ChuyenNganh" ColumnName="ChuyenNganh" />
-          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
-          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
-          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="MSGV" ColumnName="MSGV" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="ChuyenNganh" ColumnName="ChuyenNganh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MonHocs">
-      <EntityTypeMapping TypeName="QuanLyDoAnModel.MonHoc">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.MonHoc">
         <MappingFragment StoreEntitySet="MonHoc">
-          <ScalarProperty Name="SoTinChi" ColumnName="SoTinChi" />
-          <ScalarProperty Name="SoTiet" ColumnName="SoTiet" />
+          <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
           <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
+          <ScalarProperty Name="SoTiet" ColumnName="SoTiet" />
+          <ScalarProperty Name="SoTinChi" ColumnName="SoTinChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nhoms">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.Nhom">
+        <MappingFragment StoreEntitySet="Nhom">
+          <ScalarProperty Name="MaNhom" ColumnName="MaNhom" />
+          <ScalarProperty Name="Mssv" ColumnName="Mssv" />
           <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="SinhViens">
-      <EntityTypeMapping TypeName="QuanLyDoAnModel.SinhVien">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.SinhVien">
         <MappingFragment StoreEntitySet="SinhVien">
-          <ScalarProperty Name="NamNhapHoc" ColumnName="NamNhapHoc" />
-          <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
-          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
-          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
-          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="Mssv" ColumnName="Mssv" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="QuanLyDoAnModel.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
+          <ScalarProperty Name="NamNhapHoc" ColumnName="NamNhapHoc" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TieuLuanChuyenNganhs">
-      <EntityTypeMapping TypeName="QuanLyDoAnModel.TieuLuanChuyenNganh">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.TieuLuanChuyenNganh">
         <MappingFragment StoreEntitySet="TieuLuanChuyenNganh">
-          <ScalarProperty Name="Diem" ColumnName="Diem" />
-          <ScalarProperty Name="Check" ColumnName="Check" />
-          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
-          <ScalarProperty Name="TienDo" ColumnName="TienDo" />
-          <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
-          <ScalarProperty Name="TenDeTai" ColumnName="TenDeTai" />
-          <ScalarProperty Name="Mssv" ColumnName="Mssv" />
           <ScalarProperty Name="MaTLCN" ColumnName="MaTLCN" />
+          <ScalarProperty Name="Mssv" ColumnName="Mssv" />
+          <ScalarProperty Name="TenDeTai" ColumnName="TenDeTai" />
+          <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
+          <ScalarProperty Name="TienDo" ColumnName="TienDo" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="Check" ColumnName="Check" />
+          <ScalarProperty Name="Diem" ColumnName="Diem" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

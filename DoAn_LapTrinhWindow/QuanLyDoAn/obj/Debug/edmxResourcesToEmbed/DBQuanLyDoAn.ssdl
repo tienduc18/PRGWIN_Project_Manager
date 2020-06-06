@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="QuanLyDoAnModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="QuanLyDeTaiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ChuyenNganh">
     <Key>
       <PropertyRef Name="IDChuyenNganh" />
@@ -55,6 +55,14 @@
     <Property Name="SoTiet" Type="int" />
     <Property Name="SoTinChi" Type="int" />
   </EntityType>
+  <EntityType Name="Nhom">
+    <Key>
+      <PropertyRef Name="MaNhom" />
+    </Key>
+    <Property Name="MaNhom" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Mssv" Type="char" MaxLength="8" />
+    <Property Name="MaMonHoc" Type="char" MaxLength="10" />
+  </EntityType>
   <EntityType Name="SinhVien">
     <Key>
       <PropertyRef Name="Mssv" />
@@ -67,16 +75,6 @@
     <Property Name="Khoa" Type="nvarchar" MaxLength="30" />
     <Property Name="IDChuyenNganh" Type="char" MaxLength="4" />
     <Property Name="NamNhapHoc" Type="char" MaxLength="4" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TieuLuanChuyenNganh">
     <Key>
@@ -163,14 +161,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="QuanLyDoAnModelStoreContainer">
+  <EntityContainer Name="QuanLyDeTaiModelStoreContainer">
     <EntitySet Name="ChuyenNganh" EntityType="Self.ChuyenNganh" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DoAnMonHoc" EntityType="Self.DoAnMonHoc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DoAnTotNghiep" EntityType="Self.DoAnTotNghiep" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nhom" EntityType="Self.Nhom" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TieuLuanChuyenNganh" EntityType="Self.TieuLuanChuyenNganh" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_DoAnMonHoc_MonHoc" Association="Self.FK_DoAnMonHoc_MonHoc">
       <End Role="MonHoc" EntitySet="MonHoc" />

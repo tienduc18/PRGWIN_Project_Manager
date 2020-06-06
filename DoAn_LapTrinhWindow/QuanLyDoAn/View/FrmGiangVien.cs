@@ -19,7 +19,7 @@ namespace QuanLyDoAn.View
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            using (var _context = new DBQuanLyDoAn())
+            using (var _context = new QuanLyDeTaiEntities())
             {
                 string msgv = txtMSGV.Text;
                 string name = txtHoTen.Text;

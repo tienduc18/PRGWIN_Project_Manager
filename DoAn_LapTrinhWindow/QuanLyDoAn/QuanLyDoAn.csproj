@@ -80,6 +80,21 @@
     <Compile Include="DoAnTotNghiep.cs">
       <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
     </Compile>
+    <Compile Include="GiangVien.cs">
+      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MonHoc.cs">
+      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nhom.cs">
+      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SinhVien.cs">
+      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TieuLuanChuyenNganh.cs">
+      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,23 +119,8 @@
     <Compile Include="FrmTestDB.Designer.cs">
       <DependentUpon>FrmTestDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiangVien.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MonHoc.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SinhVien.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TieuLuanChuyenNganh.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
-    </Compile>
     <Compile Include="View\FrmSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,19 +173,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DBQuanLyDoAn.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBQuanLyDoAn.Context.cs</LastGenOutput>
       <DependentUpon>DBQuanLyDoAn.edmx</DependentUpon>
+      <LastGenOutput>DBQuanLyDoAn.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DBQuanLyDoAn.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBQuanLyDoAn.edmx</DependentUpon>
       <LastGenOutput>DBQuanLyDoAn.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
