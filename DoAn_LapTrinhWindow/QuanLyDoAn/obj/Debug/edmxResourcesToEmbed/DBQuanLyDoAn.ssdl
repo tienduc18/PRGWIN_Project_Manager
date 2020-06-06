@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyDoAnModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChuyenNganh">
+    <Key>
+      <PropertyRef Name="IDChuyenNganh" />
+    </Key>
+    <Property Name="IDChuyenNganh" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="TenChuyenNganh" Type="nvarchar" MaxLength="70" />
+  </EntityType>
+  <EntityType Name="DoAnMonHoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="MaMonHoc" Type="char" MaxLength="10" />
+    <Property Name="TenDeTai" Type="nvarchar" MaxLength="70" />
+    <Property Name="TienDo" Type="nvarchar(max)" />
+    <Property Name="Deadline" Type="date" />
+    <Property Name="Check" Type="nvarchar(max)" />
+    <Property Name="Diem" Type="float" />
+    <Property Name="MSSV" Type="char" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="DoAnTotNghiep">
+    <Key>
+      <PropertyRef Name="Mssv" />
+    </Key>
+    <Property Name="MaDATN" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="Mssv" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="TenDeTai" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDChuyenNganh" Type="char" MaxLength="4" />
+    <Property Name="GVHD" Type="char" MaxLength="4" />
+    <Property Name="TienDo" Type="nvarchar(max)" />
+    <Property Name="Deadline" Type="date" />
+    <Property Name="Check" Type="bit" />
+    <Property Name="Diem" Type="float" />
+  </EntityType>
+  <EntityType Name="GiangVien">
+    <Key>
+      <PropertyRef Name="MSGV" />
+    </Key>
+    <Property Name="MSGV" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="60" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="QueQuan" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+    <Property Name="Khoa" Type="nvarchar" MaxLength="50" />
+    <Property Name="ChuyenNganh" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MonHoc">
+    <Key>
+      <PropertyRef Name="MaMonHoc" />
+    </Key>
+    <Property Name="MaMonHoc" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TenMonHoc" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoTiet" Type="int" />
+    <Property Name="SoTinChi" Type="int" />
+  </EntityType>
+  <EntityType Name="SinhVien">
+    <Key>
+      <PropertyRef Name="Mssv" />
+    </Key>
+    <Property Name="Mssv" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="60" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="QueQuan" Type="nvarchar(max)" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+    <Property Name="Khoa" Type="nvarchar" MaxLength="30" />
+    <Property Name="IDChuyenNganh" Type="char" MaxLength="4" />
+    <Property Name="NamNhapHoc" Type="char" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TieuLuanChuyenNganh">
+    <Key>
+      <PropertyRef Name="Mssv" />
+    </Key>
+    <Property Name="MaTLCN" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="Mssv" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="TenDeTai" Type="nvarchar" MaxLength="60" />
+    <Property Name="IDChuyenNganh" Type="char" MaxLength="4" />
+    <Property Name="TienDo" Type="nvarchar(max)" />
+    <Property Name="Deadline" Type="date" />
+    <Property Name="Check" Type="bit" />
+    <Property Name="Diem" Type="float" />
+  </EntityType>
+  <Association Name="FK_DoAnMonHoc_MonHoc">
+    <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="0..1" />
+    <End Role="DoAnMonHoc" Type="Self.DoAnMonHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonHoc">
+        <PropertyRef Name="MaMonHoc" />
+      </Principal>
+      <Dependent Role="DoAnMonHoc">
+        <PropertyRef Name="MaMonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoAnMonHoc_SinhVien">
+    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="0..1" />
+    <End Role="DoAnMonHoc" Type="Self.DoAnMonHoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SinhVien">
+        <PropertyRef Name="Mssv" />
+      </Principal>
+      <Dependent Role="DoAnMonHoc">
+        <PropertyRef Name="MSSV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoAnTotNghiep_GiangVien">
+    <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="0..1" />
+    <End Role="DoAnTotNghiep" Type="Self.DoAnTotNghiep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GiangVien">
+        <PropertyRef Name="MSGV" />
+      </Principal>
+      <Dependent Role="DoAnTotNghiep">
+        <PropertyRef Name="GVHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoAnTotNghiep_SinhVien">
+    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="1" />
+    <End Role="DoAnTotNghiep" Type="Self.DoAnTotNghiep" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SinhVien">
+        <PropertyRef Name="Mssv" />
+      </Principal>
+      <Dependent Role="DoAnTotNghiep">
+        <PropertyRef Name="Mssv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SinhVien_ChuyenNganh">
+    <End Role="ChuyenNganh" Type="Self.ChuyenNganh" Multiplicity="0..1" />
+    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChuyenNganh">
+        <PropertyRef Name="IDChuyenNganh" />
+      </Principal>
+      <Dependent Role="SinhVien">
+        <PropertyRef Name="IDChuyenNganh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SinhVien_TieuLuanChuyenNganh">
+    <End Role="TieuLuanChuyenNganh" Type="Self.TieuLuanChuyenNganh" Multiplicity="1" />
+    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TieuLuanChuyenNganh">
+        <PropertyRef Name="Mssv" />
+      </Principal>
+      <Dependent Role="SinhVien">
+        <PropertyRef Name="Mssv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanLyDoAnModelStoreContainer">
+    <EntitySet Name="ChuyenNganh" EntityType="Self.ChuyenNganh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoAnMonHoc" EntityType="Self.DoAnMonHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoAnTotNghiep" EntityType="Self.DoAnTotNghiep" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TieuLuanChuyenNganh" EntityType="Self.TieuLuanChuyenNganh" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DoAnMonHoc_MonHoc" Association="Self.FK_DoAnMonHoc_MonHoc">
+      <End Role="MonHoc" EntitySet="MonHoc" />
+      <End Role="DoAnMonHoc" EntitySet="DoAnMonHoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoAnMonHoc_SinhVien" Association="Self.FK_DoAnMonHoc_SinhVien">
+      <End Role="SinhVien" EntitySet="SinhVien" />
+      <End Role="DoAnMonHoc" EntitySet="DoAnMonHoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoAnTotNghiep_GiangVien" Association="Self.FK_DoAnTotNghiep_GiangVien">
+      <End Role="GiangVien" EntitySet="GiangVien" />
+      <End Role="DoAnTotNghiep" EntitySet="DoAnTotNghiep" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoAnTotNghiep_SinhVien" Association="Self.FK_DoAnTotNghiep_SinhVien">
+      <End Role="SinhVien" EntitySet="SinhVien" />
+      <End Role="DoAnTotNghiep" EntitySet="DoAnTotNghiep" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SinhVien_ChuyenNganh" Association="Self.FK_SinhVien_ChuyenNganh">
+      <End Role="ChuyenNganh" EntitySet="ChuyenNganh" />
+      <End Role="SinhVien" EntitySet="SinhVien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SinhVien_TieuLuanChuyenNganh" Association="Self.FK_SinhVien_TieuLuanChuyenNganh">
+      <End Role="TieuLuanChuyenNganh" EntitySet="TieuLuanChuyenNganh" />
+      <End Role="SinhVien" EntitySet="SinhVien" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
