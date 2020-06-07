@@ -66,5 +66,20 @@ namespace QuanLyDoAn.View
             frmAdd formAdd = new frmAdd();
             formAdd.Show();                         
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            SinhVien student = new SinhVien();
+            student.Mssv = dtgThongTinSinhVien.CurrentRow.Cells[0].Value.ToString();
+            student.HoTen = dtgThongTinSinhVien.CurrentRow.Cells[1].Value.ToString();
+            student.NgaySinh = DateTime.Parse(dtgThongTinSinhVien.CurrentRow.Cells[2].Value.ToString());
+            student.GioiTinh = dtgThongTinSinhVien.CurrentRow.Cells[3].Value.ToString();
+            student.QueQuan = dtgThongTinSinhVien.CurrentRow.Cells[4].Value.ToString();
+            student.Khoa = dtgThongTinSinhVien.CurrentRow.Cells[5].Value.ToString();
+            student.IDChuyenNganh = dtgThongTinSinhVien.CurrentRow.Cells[6].Value.ToString();
+            student.NamNhapHoc = dtgThongTinSinhVien.CurrentRow.Cells[7].Value.ToString();
+            frmUpdate formUpdate = new frmUpdate(student);
+            formUpdate.Show();
+        }
     }
 }
