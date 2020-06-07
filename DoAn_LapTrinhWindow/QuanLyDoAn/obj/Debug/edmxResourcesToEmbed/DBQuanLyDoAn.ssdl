@@ -149,18 +149,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SinhVien_TieuLuanChuyenNganh">
-    <End Role="TieuLuanChuyenNganh" Type="Self.TieuLuanChuyenNganh" Multiplicity="1" />
-    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="TieuLuanChuyenNganh">
-        <PropertyRef Name="Mssv" />
-      </Principal>
-      <Dependent Role="SinhVien">
-        <PropertyRef Name="Mssv" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="QuanLyDeTaiModelStoreContainer">
     <EntitySet Name="ChuyenNganh" EntityType="Self.ChuyenNganh" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DoAnMonHoc" EntityType="Self.DoAnMonHoc" Schema="dbo" store:Type="Tables" />
@@ -188,10 +176,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_SinhVien_ChuyenNganh" Association="Self.FK_SinhVien_ChuyenNganh">
       <End Role="ChuyenNganh" EntitySet="ChuyenNganh" />
-      <End Role="SinhVien" EntitySet="SinhVien" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SinhVien_TieuLuanChuyenNganh" Association="Self.FK_SinhVien_TieuLuanChuyenNganh">
-      <End Role="TieuLuanChuyenNganh" EntitySet="TieuLuanChuyenNganh" />
       <End Role="SinhVien" EntitySet="SinhVien" />
     </AssociationSet>
   </EntityContainer>

@@ -15,6 +15,15 @@ namespace QuanLyDoAn.View
         public FrmSinhVien()
         {
             InitializeComponent();
+            this.cMSSV.DataPropertyName = nameof(SinhVien.Mssv);
+            this.cHoTen.DataPropertyName = nameof(SinhVien.HoTen);
+            this.cNgaySinh.DataPropertyName = nameof(SinhVien.NgaySinh);
+            this.cGioiTinh.DataPropertyName = nameof(SinhVien.GioiTinh);
+
+            this.cQueQuan.DataPropertyName = nameof(SinhVien.QueQuan);
+            this.cKhoa.DataPropertyName = nameof(SinhVien.Khoa);
+            this.cChuyenNganh.DataPropertyName = nameof(ChuyenNganh.TenChuyenNganh);
+            this.cNamNhapHoc.DataPropertyName = nameof(SinhVien.NamNhapHoc);
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -37,19 +46,25 @@ namespace QuanLyDoAn.View
                 }
                 var i = x.First();
                 
-                this.cMSSV.DataPropertyName = nameof(i.Mssv);
-                this.cHoTen.DataPropertyName = nameof(i.HoTen);
-                this.cNgaySinh.DataPropertyName = nameof(i.NgaySinh);
-                this.cGioiTinh.DataPropertyName = nameof(i.GioiTinh);
+                //this.cMSSV.DataPropertyName = nameof(i.Mssv);
+                //this.cHoTen.DataPropertyName = nameof(i.HoTen);
+                //this.cNgaySinh.DataPropertyName = nameof(i.NgaySinh);
+                //this.cGioiTinh.DataPropertyName = nameof(i.GioiTinh);
                 
-                this.cQueQuan.DataPropertyName = nameof(i.QueQuan);
-                this.cKhoa.DataPropertyName = nameof(i.Khoa);
-                this.cChuyenNganh.DataPropertyName = nameof(i.TenChuyenNganh);
-                this.cNamNhapHoc.DataPropertyName = nameof(i.NamNhapHoc);
+                //this.cQueQuan.DataPropertyName = nameof(i.QueQuan);
+                //this.cKhoa.DataPropertyName = nameof(i.Khoa);
+                //this.cChuyenNganh.DataPropertyName = nameof(i.TenChuyenNganh);
+                //this.cNamNhapHoc.DataPropertyName = nameof(i.NamNhapHoc);
                 
                 this.dtgThongTinSinhVien.DataSource = x.ToList();
 
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAdd formAdd = new frmAdd();
+            formAdd.Show();                         
         }
     }
 }

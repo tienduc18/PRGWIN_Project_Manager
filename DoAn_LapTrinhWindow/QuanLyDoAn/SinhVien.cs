@@ -33,6 +33,5 @@ namespace QuanLyDoAn
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DoAnMonHoc> DoAnMonHocs { get; set; }
         public virtual DoAnTotNghiep DoAnTotNghiep { get; set; }
-        public virtual TieuLuanChuyenNganh TieuLuanChuyenNganh { get; set; }
     }
 }

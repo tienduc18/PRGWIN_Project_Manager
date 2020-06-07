@@ -22,7 +22,5 @@ namespace QuanLyDoAn
         public Nullable<System.DateTime> Deadline { get; set; }
         public Nullable<bool> Check { get; set; }
         public Nullable<double> Diem { get; set; }
-    
-        public virtual SinhVien SinhVien { get; set; }
     }
 }

@@ -85,7 +85,6 @@
     <NavigationProperty Name="ChuyenNganh" Relationship="Self.FK_SinhVien_ChuyenNganh" FromRole="SinhVien" ToRole="ChuyenNganh" />
     <NavigationProperty Name="DoAnMonHocs" Relationship="Self.FK_DoAnMonHoc_SinhVien" FromRole="SinhVien" ToRole="DoAnMonHoc" />
     <NavigationProperty Name="DoAnTotNghiep" Relationship="Self.FK_DoAnTotNghiep_SinhVien" FromRole="SinhVien" ToRole="DoAnTotNghiep" />
-    <NavigationProperty Name="TieuLuanChuyenNganh" Relationship="Self.FK_SinhVien_TieuLuanChuyenNganh" FromRole="SinhVien" ToRole="TieuLuanChuyenNganh" />
   </EntityType>
   <EntityType Name="TieuLuanChuyenNganh">
     <Key>
@@ -99,7 +98,6 @@
     <Property Name="Deadline" Type="DateTime" Precision="0" />
     <Property Name="Check" Type="Boolean" />
     <Property Name="Diem" Type="Double" />
-    <NavigationProperty Name="SinhVien" Relationship="Self.FK_SinhVien_TieuLuanChuyenNganh" FromRole="TieuLuanChuyenNganh" ToRole="SinhVien" />
   </EntityType>
   <Association Name="FK_SinhVien_ChuyenNganh">
     <End Role="ChuyenNganh" Type="Self.ChuyenNganh" Multiplicity="0..1" />
@@ -161,18 +159,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_SinhVien_TieuLuanChuyenNganh">
-    <End Role="TieuLuanChuyenNganh" Type="Self.TieuLuanChuyenNganh" Multiplicity="1" />
-    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="TieuLuanChuyenNganh">
-        <PropertyRef Name="Mssv" />
-      </Principal>
-      <Dependent Role="SinhVien">
-        <PropertyRef Name="Mssv" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="QuanLyDeTaiEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ChuyenNganhs" EntityType="Self.ChuyenNganh" />
     <EntitySet Name="DoAnMonHocs" EntityType="Self.DoAnMonHoc" />
@@ -201,10 +187,6 @@
     <AssociationSet Name="FK_DoAnTotNghiep_SinhVien" Association="Self.FK_DoAnTotNghiep_SinhVien">
       <End Role="SinhVien" EntitySet="SinhViens" />
       <End Role="DoAnTotNghiep" EntitySet="DoAnTotNghieps" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SinhVien_TieuLuanChuyenNganh" Association="Self.FK_SinhVien_TieuLuanChuyenNganh">
-      <End Role="TieuLuanChuyenNganh" EntitySet="TieuLuanChuyenNganhs" />
-      <End Role="SinhVien" EntitySet="SinhViens" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
