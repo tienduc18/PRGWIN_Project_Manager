@@ -17,7 +17,7 @@ namespace QuanLyDoAn
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MonHoc()
         {
-            this.DoAnMonHocs = new HashSet<DoAnMonHoc>();
+            this.DeAns = new HashSet<DeAn>();
         }
     
         public string MaMonHoc { get; set; }
@@ -26,6 +26,6 @@ namespace QuanLyDoAn
         public Nullable<int> SoTinChi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DoAnMonHoc> DoAnMonHocs { get; set; }
+        public virtual ICollection<DeAn> DeAns { get; set; }
     }
 }

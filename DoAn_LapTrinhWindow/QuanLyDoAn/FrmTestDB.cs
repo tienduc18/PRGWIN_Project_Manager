@@ -19,7 +19,7 @@ namespace QuanLyDoAn
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            using (var _context = new QuanLyDeTaiEntities())
+            using (var _context = new DBLapTrinhWin())
             {
                 var sinhvien = (from u in _context.SinhViens
                                select u).Single();

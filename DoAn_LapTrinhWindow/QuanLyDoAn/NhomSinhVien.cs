@@ -12,24 +12,19 @@ namespace QuanLyDoAn
     using System;
     using System.Collections.Generic;
     
-    public partial class ChuyenNganh
+    public partial class NhomSinhVien
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ChuyenNganh()
+        public NhomSinhVien()
         {
             this.DeAns = new HashSet<DeAn>();
-            this.GiangViens = new HashSet<GiangVien>();
-            this.SinhViens = new HashSet<SinhVien>();
         }
     
-        public string IDChuyenNganh { get; set; }
-        public string TenChuyenNganh { get; set; }
+        public string IDNhom { get; set; }
+        public string TenNhom { get; set; }
+        public string ThanhVien { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DeAn> DeAns { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GiangVien> GiangViens { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SinhVien> SinhViens { get; set; }
     }
 }

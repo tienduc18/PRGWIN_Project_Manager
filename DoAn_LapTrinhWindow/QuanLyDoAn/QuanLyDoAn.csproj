@@ -56,45 +56,45 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChuyenNganh.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
     </Compile>
     <Compile Include="Controller\QuanLyDoAnController.cs" />
     <Compile Include="Controller\StudentController.cs" />
-    <Compile Include="DBQuanLyDoAn.Context.cs">
+    <Compile Include="DBLapTrinhWin.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBQuanLyDoAn.Context.tt</DependentUpon>
+      <DependentUpon>DBLapTrinhWin.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBQuanLyDoAn.cs">
+    <Compile Include="DBLapTrinhWin.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBQuanLyDoAn.Designer.cs">
+    <Compile Include="DBLapTrinhWin.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBQuanLyDoAn.edmx</DependentUpon>
+      <DependentUpon>DBLapTrinhWin.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DoAnMonHoc.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DoAnTotNghiep.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+    <Compile Include="DeAn.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
     </Compile>
     <Compile Include="GiangVien.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
     </Compile>
     <Compile Include="MonHoc.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
     </Compile>
-    <Compile Include="Nhom.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+    <Compile Include="NhomSinhVien.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
     </Compile>
     <Compile Include="SinhVien.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
     </Compile>
-    <Compile Include="TieuLuanChuyenNganh.cs">
-      <DependentUpon>DBQuanLyDoAn.tt</DependentUpon>
+    <Compile Include="TienDo.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Type.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
     </Compile>
     <Compile Include="View\frmAdd.cs">
       <SubType>Form</SubType>
@@ -170,12 +170,12 @@
     <EmbeddedResource Include="View\frmUpdate.resx">
       <DependentUpon>frmUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="DBQuanLyDoAn.edmx">
+    <EntityDeploy Include="DBLapTrinhWin.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBQuanLyDoAn.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBLapTrinhWin.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DBQuanLyDoAn.edmx.diagram">
-      <DependentUpon>DBQuanLyDoAn.edmx</DependentUpon>
+    <None Include="DBLapTrinhWin.edmx.diagram">
+      <DependentUpon>DBLapTrinhWin.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -195,15 +195,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBQuanLyDoAn.Context.tt">
+    <Content Include="DBLapTrinhWin.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBQuanLyDoAn.edmx</DependentUpon>
-      <LastGenOutput>DBQuanLyDoAn.Context.cs</LastGenOutput>
+      <DependentUpon>DBLapTrinhWin.edmx</DependentUpon>
+      <LastGenOutput>DBLapTrinhWin.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DBQuanLyDoAn.tt">
+    <Content Include="DBLapTrinhWin.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBQuanLyDoAn.edmx</DependentUpon>
-      <LastGenOutput>DBQuanLyDoAn.cs</LastGenOutput>
+      <DependentUpon>DBLapTrinhWin.edmx</DependentUpon>
+      <LastGenOutput>DBLapTrinhWin.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

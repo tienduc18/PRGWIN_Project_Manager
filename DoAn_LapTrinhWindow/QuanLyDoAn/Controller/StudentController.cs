@@ -13,7 +13,7 @@ namespace QuanLyDoAn.Controller
     {
         public static SinhVien GetStudent(string studentID)
         {
-            using (var _context = new QuanLyDeTaiEntities())
+            using (var _context = new DBLapTrinhWin())
             {
                 var dbStudent = (from s in _context.SinhViens
                                 where s.Mssv == studentID
@@ -23,7 +23,7 @@ namespace QuanLyDoAn.Controller
         }
         public static bool AddStudent(SinhVien student)
         {
-            using (var _context = new QuanLyDeTaiEntities())
+            using (var _context = new DBLapTrinhWin())
             {
                 _context.SinhViens.Add(student);
                 _context.SaveChanges();
@@ -32,7 +32,7 @@ namespace QuanLyDoAn.Controller
         }
         public static bool UpdateStudent(SinhVien student)
         {
-            using (var _context = new QuanLyDeTaiEntities())
+            using (var _context = new DBLapTrinhWin())
             {
                 _context.SinhViens.AddOrUpdate(student);
                 //try

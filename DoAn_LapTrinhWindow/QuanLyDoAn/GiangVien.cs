@@ -17,7 +17,7 @@ namespace QuanLyDoAn
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GiangVien()
         {
-            this.DoAnTotNghieps = new HashSet<DoAnTotNghiep>();
+            this.DeAns = new HashSet<DeAn>();
         }
     
         public string MSGV { get; set; }
@@ -28,7 +28,8 @@ namespace QuanLyDoAn
         public string Khoa { get; set; }
         public string ChuyenNganh { get; set; }
     
+        public virtual ChuyenNganh ChuyenNganh1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DoAnTotNghiep> DoAnTotNghieps { get; set; }
+        public virtual ICollection<DeAn> DeAns { get; set; }
     }
 }

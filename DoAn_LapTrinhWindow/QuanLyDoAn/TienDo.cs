@@ -12,15 +12,13 @@ namespace QuanLyDoAn
     using System;
     using System.Collections.Generic;
     
-    public partial class TieuLuanChuyenNganh
+    public partial class TienDo
     {
-        public string MaTLCN { get; set; }
-        public string Mssv { get; set; }
-        public string TenDeTai { get; set; }
-        public string IDChuyenNganh { get; set; }
-        public string TienDo { get; set; }
-        public Nullable<System.DateTime> Deadline { get; set; }
-        public Nullable<bool> Check { get; set; }
-        public Nullable<double> Diem { get; set; }
+        public string IDDeAn { get; set; }
+        public string BaoCao { get; set; }
+        public string HoanThanh { get; set; }
+        public string LinkTaiLieu { get; set; }
+    
+        public virtual DeAn DeAn { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\DBQuanLyDoAn.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\DBLapTrinhWin.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

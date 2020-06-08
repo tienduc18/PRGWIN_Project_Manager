@@ -14,12 +14,6 @@ namespace QuanLyDoAn
     
     public partial class SinhVien
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SinhVien()
-        {
-            this.DoAnMonHocs = new HashSet<DoAnMonHoc>();
-        }
-    
         public string Mssv { get; set; }
         public string HoTen { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
@@ -30,8 +24,5 @@ namespace QuanLyDoAn
         public string NamNhapHoc { get; set; }
     
         public virtual ChuyenNganh ChuyenNganh { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DoAnMonHoc> DoAnMonHocs { get; set; }
-        public virtual DoAnTotNghiep DoAnTotNghiep { get; set; }
     }
 }

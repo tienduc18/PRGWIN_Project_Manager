@@ -54,5 +54,4 @@ D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\
 D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\EntityFramework.SqlServer.xml
 D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.csproj.CopyComplete
 D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.frmAdd.resources
-D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.csprojAssemblyReference.cache
 D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.frmUpdate.resources

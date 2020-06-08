@@ -12,18 +12,18 @@ namespace QuanLyDoAn
     using System;
     using System.Collections.Generic;
     
-    public partial class DoAnMonHoc
+    public partial class Type
     {
-        public string ID { get; set; }
-        public string MaMonHoc { get; set; }
-        public string TenDeTai { get; set; }
-        public string TienDo { get; set; }
-        public Nullable<System.DateTime> Deadline { get; set; }
-        public string Check { get; set; }
-        public Nullable<double> Diem { get; set; }
-        public string MSSV { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Type()
+        {
+            this.DeAns = new HashSet<DeAn>();
+        }
     
-        public virtual MonHoc MonHoc { get; set; }
-        public virtual SinhVien SinhVien { get; set; }
+        public string IDType { get; set; }
+        public string LoaiDeAn { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DeAn> DeAns { get; set; }
     }
 }
