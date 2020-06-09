@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QuanLyDoAn.View
 {
-    public partial class frmAdd : Form
+    public partial class frmAddStudent : Form
     {
-        public frmAdd()
+        public frmAddStudent()
         {
             InitializeComponent();
             txtMSSV.Select();

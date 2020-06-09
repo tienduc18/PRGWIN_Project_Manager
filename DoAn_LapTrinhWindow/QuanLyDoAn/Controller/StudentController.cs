@@ -34,21 +34,8 @@ namespace QuanLyDoAn.Controller
         {
             using (var _context = new DBLapTrinhWin())
             {
-                _context.SinhViens.AddOrUpdate(student);
-                //try
-                //{
-                _context.SaveChanges();
-                //}
-                //catch (DbEntityValidationException ex)
-                //{
-                //    foreach (var entityValidationErrors in ex.EntityValidationErrors)
-                //    {
-                //        foreach (var validationError in entityValidationErrors.ValidationErrors)
-                //        {
-                //            Console.Write("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
-                //        }
-                //    }
-                //}
+                _context.SinhViens.AddOrUpdate(student);                
+                _context.SaveChanges();               
                 return true;
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace QuanLyDoAn.View
 {
-    partial class frmAdd
+    partial class frmAddStudent
     {
         /// <summary>
         /// Required designer variable.

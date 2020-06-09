@@ -96,11 +96,11 @@
     <Compile Include="Type.cs">
       <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\frmAdd.cs">
+    <Compile Include="View\frmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmAdd.Designer.cs">
-      <DependentUpon>frmAdd.cs</DependentUpon>
+    <Compile Include="View\frmAddStudent.Designer.cs">
+      <DependentUpon>frmAddStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmGiangVien.cs">
       <SubType>Form</SubType>
@@ -134,14 +134,14 @@
     <Compile Include="View\FrmSinhVien.Designer.cs">
       <DependentUpon>FrmSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmUpdate.cs">
+    <Compile Include="View\frmUpdateStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmUpdate.Designer.cs">
-      <DependentUpon>frmUpdate.cs</DependentUpon>
+    <Compile Include="View\frmUpdateStudent.Designer.cs">
+      <DependentUpon>frmUpdateStudent.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\frmAdd.resx">
-      <DependentUpon>frmAdd.cs</DependentUpon>
+    <EmbeddedResource Include="View\frmAddStudent.resx">
+      <DependentUpon>frmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmGiangVien.resx">
       <DependentUpon>FrmGiangVien.cs</DependentUpon>
@@ -167,8 +167,8 @@
     <EmbeddedResource Include="View\FrmSinhVien.resx">
       <DependentUpon>FrmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmUpdate.resx">
-      <DependentUpon>frmUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="View\frmUpdateStudent.resx">
+      <DependentUpon>frmUpdateStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DBLapTrinhWin.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

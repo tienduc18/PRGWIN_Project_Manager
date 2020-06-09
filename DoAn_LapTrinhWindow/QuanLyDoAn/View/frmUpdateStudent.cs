@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QuanLyDoAn.View
 {
-    public partial class frmUpdate : Form
+    public partial class frmUpdateStudent : Form
     {
-        public frmUpdate(SinhVien student)
+        public frmUpdateStudent(SinhVien student)
         {
             InitializeComponent();
             txtMSSV.Text = student.Mssv;

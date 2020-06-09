@@ -64,14 +64,14 @@ namespace QuanLyDoAn.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAdd formAdd = new frmAdd();
+            frmAddStudent formAdd = new frmAddStudent();
             formAdd.Show();                         
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             SinhVien student = StudentController.GetStudent(dtgThongTinSinhVien.CurrentRow.Cells[0].Value.ToString());
-            frmUpdate formUpdate = new frmUpdate(student);
+            frmUpdateStudent formUpdate = new frmUpdateStudent(student);
             formUpdate.Show();
         }
     }

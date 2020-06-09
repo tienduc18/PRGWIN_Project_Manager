@@ -1,6 +1,6 @@
 ﻿namespace QuanLyDoAn.View
 {
-    partial class frmUpdate
+    partial class frmUpdateStudent
     {
         /// <summary>
         /// Required designer variable.
