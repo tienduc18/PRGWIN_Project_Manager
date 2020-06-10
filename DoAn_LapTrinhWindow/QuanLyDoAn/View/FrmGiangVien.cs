@@ -12,9 +12,18 @@ namespace QuanLyDoAn.View
 {
     public partial class FrmGiangVien : Form
     {
+        private List<GiangVien> giangViens;
+
         public FrmGiangVien()
         {
             InitializeComponent();
+        }
+        public FrmGiangVien(List<GiangVien> giangViens)
+        {
+            InitializeComponent();
+
+            this.giangViens = giangViens;
+            DoDuLieu();
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -42,6 +51,28 @@ namespace QuanLyDoAn.View
                 this.cChuyenNganh.DataPropertyName = nameof(i.ChuyenNganh);
                 this.dtgThongTinGiangVien.DataSource = x.ToList();
             }
+        }
+
+        private void DoDuLieu()
+        {
+            dtgThongTinGiangVien.DataSource = giangViens;
+            dtgThongTinGiangVien.Refresh();
+        }
+
+        private void DoLaiDuLieu()
+        {
+            DBLapTrinhWin db = new DBLapTrinhWin();
+            string msgv = giangViens[0].MSGV;
+            giangViens = db.GiangViens.Where(x => x.MSGV == msgv).ToList();
+            DoDuLieu();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddGiangVien gv = new frmAddGiangVien(giangViens[0].MSGV);
+            gv.ShowDialog();
+
+            DoLaiDuLieu();
         }
     }
 }

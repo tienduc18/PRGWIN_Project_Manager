@@ -13,7 +13,6 @@ namespace QuanLyDoAn.View
     public partial class FrmMain : Form
     {
         private int childFormNumber = 0;
-
         public FrmMain()
         {
             InitializeComponent();
@@ -53,20 +52,6 @@ namespace QuanLyDoAn.View
         {
             this.Close();
         }
-
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {

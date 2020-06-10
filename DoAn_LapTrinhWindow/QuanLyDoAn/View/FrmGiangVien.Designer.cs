@@ -48,6 +48,9 @@
             this.cQueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cChuyenNganh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -64,6 +67,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnDelete);
+            this.splitContainer1.Panel1.Controls.Add(this.btnAdd);
+            this.splitContainer1.Panel1.Controls.Add(this.btnUpdate);
             this.splitContainer1.Panel1.Controls.Add(this.txtChuyenNganh);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.txtQueQuan);
@@ -79,8 +85,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dtgThongTinGiangVien);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 211;
+            this.splitContainer1.Size = new System.Drawing.Size(959, 527);
+            this.splitContainer1.SplitterDistance = 247;
             this.splitContainer1.TabIndex = 0;
             // 
             // txtChuyenNganh
@@ -180,7 +186,7 @@
             // btnFind
             // 
             this.btnFind.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.Location = new System.Drawing.Point(672, 140);
+            this.btnFind.Location = new System.Drawing.Point(821, 160);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(116, 48);
             this.btnFind.TabIndex = 0;
@@ -203,7 +209,7 @@
             this.dtgThongTinGiangVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgThongTinGiangVien.Location = new System.Drawing.Point(0, 0);
             this.dtgThongTinGiangVien.Name = "dtgThongTinGiangVien";
-            this.dtgThongTinGiangVien.Size = new System.Drawing.Size(800, 235);
+            this.dtgThongTinGiangVien.Size = new System.Drawing.Size(959, 276);
             this.dtgThongTinGiangVien.TabIndex = 1;
             // 
             // cMSGV
@@ -242,11 +248,42 @@
             this.cChuyenNganh.HeaderText = "Chuyên ngành";
             this.cChuyenNganh.Name = "cChuyenNganh";
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(509, 160);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(116, 48);
+            this.btnUpdate.TabIndex = 20;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(350, 160);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(116, 48);
+            this.btnAdd.TabIndex = 21;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(668, 160);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(116, 48);
+            this.btnDelete.TabIndex = 22;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
             // FrmGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(959, 527);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FrmGiangVien";
             this.Text = "FrmGiangVien";
@@ -282,5 +319,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtQueQuan;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

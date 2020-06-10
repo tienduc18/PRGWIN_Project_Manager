@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyDeTaiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="DBLapTrinhWinModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChuyenNganh">
           <Key>
             <PropertyRef Name="IDChuyenNganh" />
@@ -184,7 +184,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QuanLyDeTaiModelStoreContainer">
+        <EntityContainer Name="DBLapTrinhWinModelStoreContainer">
           <EntitySet Name="ChuyenNganh" EntityType="Self.ChuyenNganh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DeAn" EntityType="Self.DeAn" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />
@@ -230,7 +230,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="QuanLyDeTaiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DBLapTrinhWinModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ChuyenNganh">
           <Key>
             <PropertyRef Name="IDChuyenNganh" />
@@ -473,9 +473,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QuanLyDeTaiModelStoreContainer" CdmEntityContainer="DBLapTrinhWin">
+        <EntityContainerMapping StorageEntityContainer="DBLapTrinhWinModelStoreContainer" CdmEntityContainer="DBLapTrinhWin">
           <EntitySetMapping Name="ChuyenNganhs">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.ChuyenNganh">
+            <EntityTypeMapping TypeName="DBLapTrinhWinModel.ChuyenNganh">
               <MappingFragment StoreEntitySet="ChuyenNganh">
                 <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
                 <ScalarProperty Name="TenChuyenNganh" ColumnName="TenChuyenNganh" />
@@ -483,7 +483,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DeAns">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.DeAn">
+            <EntityTypeMapping TypeName="DBLapTrinhWinModel.DeAn">
               <MappingFragment StoreEntitySet="DeAn">
                 <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
                 <ScalarProperty Name="TenDeAn" ColumnName="TenDeAn" />
@@ -502,7 +502,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="GiangViens">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.GiangVien">
+            <EntityTypeMapping TypeName="DBLapTrinhWinModel.GiangVien">
               <MappingFragment StoreEntitySet="GiangVien">
                 <ScalarProperty Name="MSGV" ColumnName="MSGV" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -515,7 +515,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MonHocs">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.MonHoc">
+            <EntityTypeMapping TypeName="DBLapTrinhWinModel.MonHoc">
               <MappingFragment StoreEntitySet="MonHoc">
                 <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
                 <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
@@ -525,7 +525,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhomSinhViens">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.NhomSinhVien">
+            <EntityTypeMapping TypeName="DBLapTrinhWinModel.NhomSinhVien">
               <MappingFragment StoreEntitySet="NhomSinhVien">
                 <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
                 <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
@@ -534,7 +534,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SinhViens">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.SinhVien">
+            <EntityTypeMapping TypeName="DBLapTrinhWinModel.SinhVien">
               <MappingFragment StoreEntitySet="SinhVien">
                 <ScalarProperty Name="Mssv" ColumnName="Mssv" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -548,7 +548,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TienDoes">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.TienDo">
+            <EntityTypeMapping TypeName="DBLapTrinhWinModel.TienDo">
               <MappingFragment StoreEntitySet="TienDo">
                 <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
                 <ScalarProperty Name="BaoCao" ColumnName="BaoCao" />
@@ -558,7 +558,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Types">
-            <EntityTypeMapping TypeName="QuanLyDeTaiModel.Type">
+            <EntityTypeMapping TypeName="DBLapTrinhWinModel.Type">
               <MappingFragment StoreEntitySet="Type">
                 <ScalarProperty Name="IDType" ColumnName="IDType" />
                 <ScalarProperty Name="LoaiDeAn" ColumnName="LoaiDeAn" />

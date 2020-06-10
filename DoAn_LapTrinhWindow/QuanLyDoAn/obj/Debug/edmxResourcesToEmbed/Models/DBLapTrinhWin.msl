@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBLapTrinhWinModelStoreContainer" CdmEntityContainer="DBLapTrinhWinEntities">
+    <EntitySetMapping Name="ChuyenNganhs">
+      <EntityTypeMapping TypeName="DBLapTrinhWinModel.ChuyenNganh">
+        <MappingFragment StoreEntitySet="ChuyenNganh">
+          <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
+          <ScalarProperty Name="TenChuyenNganh" ColumnName="TenChuyenNganh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeAns">
+      <EntityTypeMapping TypeName="DBLapTrinhWinModel.DeAn">
+        <MappingFragment StoreEntitySet="DeAn">
+          <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
+          <ScalarProperty Name="TenDeAn" ColumnName="TenDeAn" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="IDNhomSV" ColumnName="IDNhomSV" />
+          <ScalarProperty Name="GVHD" ColumnName="GVHD" />
+          <ScalarProperty Name="MonHoc" ColumnName="MonHoc" />
+          <ScalarProperty Name="ChuyenNganh" ColumnName="ChuyenNganh" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+          <ScalarProperty Name="TienDo" ColumnName="TienDo" />
+          <ScalarProperty Name="TaiLieu" ColumnName="TaiLieu" />
+          <ScalarProperty Name="Diem" ColumnName="Diem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiangViens">
+      <EntityTypeMapping TypeName="DBLapTrinhWinModel.GiangVien">
+        <MappingFragment StoreEntitySet="GiangVien">
+          <ScalarProperty Name="MSGV" ColumnName="MSGV" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="ChuyenNganh" ColumnName="ChuyenNganh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MonHocs">
+      <EntityTypeMapping TypeName="DBLapTrinhWinModel.MonHoc">
+        <MappingFragment StoreEntitySet="MonHoc">
+          <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+          <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
+          <ScalarProperty Name="SoTiet" ColumnName="SoTiet" />
+          <ScalarProperty Name="SoTinChi" ColumnName="SoTinChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhomSinhViens">
+      <EntityTypeMapping TypeName="DBLapTrinhWinModel.NhomSinhVien">
+        <MappingFragment StoreEntitySet="NhomSinhVien">
+          <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
+          <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
+          <ScalarProperty Name="ThanhVien" ColumnName="ThanhVien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SinhViens">
+      <EntityTypeMapping TypeName="DBLapTrinhWinModel.SinhVien">
+        <MappingFragment StoreEntitySet="SinhVien">
+          <ScalarProperty Name="Mssv" ColumnName="Mssv" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+          <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+          <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
+          <ScalarProperty Name="NamNhapHoc" ColumnName="NamNhapHoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TienDoes">
+      <EntityTypeMapping TypeName="DBLapTrinhWinModel.TienDo">
+        <MappingFragment StoreEntitySet="TienDo">
+          <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
+          <ScalarProperty Name="BaoCao" ColumnName="BaoCao" />
+          <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+          <ScalarProperty Name="LinkTaiLieu" ColumnName="LinkTaiLieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Types">
+      <EntityTypeMapping TypeName="DBLapTrinhWinModel.Type">
+        <MappingFragment StoreEntitySet="Type">
+          <ScalarProperty Name="IDType" ColumnName="IDType" />
+          <ScalarProperty Name="LoaiDeAn" ColumnName="LoaiDeAn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -55,9 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChuyenNganh.cs">
-      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Controller\GiangVienController.cs" />
     <Compile Include="Controller\QuanLyDoAnController.cs" />
     <Compile Include="Controller\StudentController.cs" />
     <Compile Include="DBLapTrinhWin.Context.cs">
@@ -75,26 +73,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBLapTrinhWin.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DeAn.cs">
-      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
+    <Compile Include="View\frmAddGiangVien.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiangVien.cs">
-      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MonHoc.cs">
-      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NhomSinhVien.cs">
-      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SinhVien.cs">
-      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TienDo.cs">
-      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Type.cs">
-      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
+    <Compile Include="View\frmAddGiangVien.Designer.cs">
+      <DependentUpon>frmAddGiangVien.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmAddStudent.cs">
       <SubType>Form</SubType>
@@ -134,12 +117,21 @@
     <Compile Include="View\FrmSinhVien.Designer.cs">
       <DependentUpon>FrmSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmUpdateGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmUpdateGiangVien.Designer.cs">
+      <DependentUpon>frmUpdateGiangVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmUpdateStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\frmUpdateStudent.Designer.cs">
       <DependentUpon>frmUpdateStudent.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\frmAddGiangVien.resx">
+      <DependentUpon>frmAddGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmAddStudent.resx">
       <DependentUpon>frmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +158,9 @@
     </Compile>
     <EmbeddedResource Include="View\FrmSinhVien.resx">
       <DependentUpon>FrmSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmUpdateGiangVien.resx">
+      <DependentUpon>frmUpdateGiangVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmUpdateStudent.resx">
       <DependentUpon>frmUpdateStudent.cs</DependentUpon>
