@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyDoAn.Data;
+using QuanLyDoAn.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -16,26 +18,39 @@ namespace QuanLyDoAn.Controller
                 var dbGiangVien = (from s in _context.GiangViens
                                  where s.MSGV == IDGiangVien
                                    select s).FirstOrDefault();
+
                 return dbGiangVien;
             } 
         }
 
-        public static bool AddGiangVien(GiangVien giangvien)
+        public static List<GiangVienViewModel> GetAllGiangVien(string searchString)
         {
             using (var _context = new DBLapTrinhWin())
             {
-                _context.GiangViens.Add(giangvien);
-                _context.SaveChanges();
-                return true;
-            }
-        }
-        public static bool UpdateGiangVien(GiangVien giangvien)
-        {
-            using (var _context = new DBLapTrinhWin())
-            {
-                _context.GiangViens.AddOrUpdate(giangvien);
-                _context.SaveChanges();
-                return true;
+                var model = _context.GiangViens;
+
+                if(!string.IsNullOrEmpty(searchString))
+                {
+                    // search
+                    // keys: lowercase
+                    // foreach key in keys
+                    // model = model.Where(x => x.MSGV == key || x.HoTen.ToLower().Contains(key))
+
+
+                }
+
+                var result = model.Select(x => new GiangVienViewModel
+                {
+                    MSGV = x.MSGV,
+                    HoTen = x.HoTen,
+                    NgaySinh = x.NgaySinh.HasValue ? x.NgaySinh.Value : DateTime.MinValue,
+                    GioiTinh = x.GioiTinh,
+                    Khoa = x.Khoa,
+                    QueQuan = x.QueQuan,
+                    ChuyenNganh = x.ChuyenNganh1.TenChuyenNganh
+                }).ToList();
+
+                return result;
             }
         }
     }

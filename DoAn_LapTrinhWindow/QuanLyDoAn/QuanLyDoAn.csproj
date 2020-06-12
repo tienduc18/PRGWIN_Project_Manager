@@ -55,29 +55,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ChuyenNganhController.cs" />
     <Compile Include="Controller\GiangVienController.cs" />
     <Compile Include="Controller\QuanLyDoAnController.cs" />
     <Compile Include="Controller\StudentController.cs" />
-    <Compile Include="DBLapTrinhWin.Context.cs">
+    <Compile Include="Data\ChuyenNganh.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DBLapTrinhWin.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBLapTrinhWin.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBLapTrinhWin.cs">
+    <Compile Include="Data\DBLapTrinhWin.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBLapTrinhWin.Designer.cs">
+    <Compile Include="Data\DBLapTrinhWin.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBLapTrinhWin.edmx</DependentUpon>
     </Compile>
-    <Compile Include="View\frmAddGiangVien.cs">
+    <Compile Include="Data\DeAn.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GiangVien.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MonHoc.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\NhomSinhVien.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SinhVien.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TienDo.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Type.cs">
+      <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ChuyenNganhViewModel.cs" />
+    <Compile Include="ViewModel\GiangVienViewModel.cs" />
+    <Compile Include="View\frmAddOrUpdateGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmAddGiangVien.Designer.cs">
-      <DependentUpon>frmAddGiangVien.cs</DependentUpon>
+    <Compile Include="View\frmAddOrUpdateGiangVien.Designer.cs">
+      <DependentUpon>frmAddOrUpdateGiangVien.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmAddStudent.cs">
       <SubType>Form</SubType>
@@ -117,20 +144,14 @@
     <Compile Include="View\FrmSinhVien.Designer.cs">
       <DependentUpon>FrmSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmUpdateGiangVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\frmUpdateGiangVien.Designer.cs">
-      <DependentUpon>frmUpdateGiangVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\frmUpdateStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\frmUpdateStudent.Designer.cs">
       <DependentUpon>frmUpdateStudent.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\frmAddGiangVien.resx">
-      <DependentUpon>frmAddGiangVien.cs</DependentUpon>
+    <EmbeddedResource Include="View\frmAddOrUpdateGiangVien.resx">
+      <DependentUpon>frmAddOrUpdateGiangVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAddStudent.resx">
       <DependentUpon>frmAddStudent.cs</DependentUpon>
@@ -159,17 +180,14 @@
     <EmbeddedResource Include="View\FrmSinhVien.resx">
       <DependentUpon>FrmSinhVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmUpdateGiangVien.resx">
-      <DependentUpon>frmUpdateGiangVien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\frmUpdateStudent.resx">
       <DependentUpon>frmUpdateStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="DBLapTrinhWin.edmx">
+    <EntityDeploy Include="Data\DBLapTrinhWin.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBLapTrinhWin.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DBLapTrinhWin.edmx.diagram">
+    <None Include="Data\DBLapTrinhWin.edmx.diagram">
       <DependentUpon>DBLapTrinhWin.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -190,12 +208,12 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBLapTrinhWin.Context.tt">
+    <Content Include="Data\DBLapTrinhWin.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBLapTrinhWin.edmx</DependentUpon>
       <LastGenOutput>DBLapTrinhWin.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DBLapTrinhWin.tt">
+    <Content Include="Data\DBLapTrinhWin.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBLapTrinhWin.edmx</DependentUpon>
       <LastGenOutput>DBLapTrinhWin.cs</LastGenOutput>
