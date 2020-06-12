@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DBLapTrinhWinModelStoreContainer" CdmEntityContainer="DBLapTrinhWin">
+  <EntityContainerMapping StorageEntityContainer="QuanLyDeTaiModelStoreContainer" CdmEntityContainer="DBLapTrinhWin">
     <EntitySetMapping Name="ChuyenNganhs">
-      <EntityTypeMapping TypeName="DBLapTrinhWinModel.ChuyenNganh">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.ChuyenNganh">
         <MappingFragment StoreEntitySet="ChuyenNganh">
           <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
           <ScalarProperty Name="TenChuyenNganh" ColumnName="TenChuyenNganh" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DeAns">
-      <EntityTypeMapping TypeName="DBLapTrinhWinModel.DeAn">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.DeAn">
         <MappingFragment StoreEntitySet="DeAn">
           <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
           <ScalarProperty Name="TenDeAn" ColumnName="TenDeAn" />
@@ -29,7 +29,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="GiangViens">
-      <EntityTypeMapping TypeName="DBLapTrinhWinModel.GiangVien">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.GiangVien">
         <MappingFragment StoreEntitySet="GiangVien">
           <ScalarProperty Name="MSGV" ColumnName="MSGV" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -42,7 +42,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MonHocs">
-      <EntityTypeMapping TypeName="DBLapTrinhWinModel.MonHoc">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.MonHoc">
         <MappingFragment StoreEntitySet="MonHoc">
           <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
           <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
@@ -52,7 +52,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="NhomSinhViens">
-      <EntityTypeMapping TypeName="DBLapTrinhWinModel.NhomSinhVien">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.NhomSinhVien">
         <MappingFragment StoreEntitySet="NhomSinhVien">
           <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
           <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
@@ -61,7 +61,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="SinhViens">
-      <EntityTypeMapping TypeName="DBLapTrinhWinModel.SinhVien">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.SinhVien">
         <MappingFragment StoreEntitySet="SinhVien">
           <ScalarProperty Name="Mssv" ColumnName="Mssv" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
@@ -75,17 +75,18 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TienDoes">
-      <EntityTypeMapping TypeName="DBLapTrinhWinModel.TienDo">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.TienDo">
         <MappingFragment StoreEntitySet="TienDo">
           <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
           <ScalarProperty Name="BaoCao" ColumnName="BaoCao" />
           <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
           <ScalarProperty Name="LinkTaiLieu" ColumnName="LinkTaiLieu" />
+          <ScalarProperty Name="SoBuoi" ColumnName="SoBuoi" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Types">
-      <EntityTypeMapping TypeName="DBLapTrinhWinModel.Type">
+      <EntityTypeMapping TypeName="QuanLyDeTaiModel.Type">
         <MappingFragment StoreEntitySet="Type">
           <ScalarProperty Name="IDType" ColumnName="IDType" />
           <ScalarProperty Name="LoaiDeAn" ColumnName="LoaiDeAn" />

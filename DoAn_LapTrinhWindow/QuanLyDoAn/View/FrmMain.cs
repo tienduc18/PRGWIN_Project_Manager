@@ -1,5 +1,4 @@
-﻿using QuanLyDoAn.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -99,7 +98,7 @@ namespace QuanLyDoAn.View
 
         private void MenuQuanLyDeTai_Click(object sender, EventArgs e)
         {
-            FrmQuanLyDoAn qlda = new FrmQuanLyDoAn();
+            FrmQuanLyDeAn qlda = new FrmQuanLyDeAn();
             qlda.MdiParent = this;
             qlda.Show();
         }

@@ -1,5 +1,4 @@
 ﻿using QuanLyDoAn.Controller;
-using QuanLyDoAn.Data;
 using QuanLyDoAn.ViewModel;
 using System;
 using System.Collections.Generic;

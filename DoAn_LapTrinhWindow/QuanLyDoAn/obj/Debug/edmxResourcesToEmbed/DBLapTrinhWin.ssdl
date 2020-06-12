@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DBLapTrinhWinModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="QuanLyDeTaiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ChuyenNganh">
     <Key>
       <PropertyRef Name="IDChuyenNganh" />
@@ -75,6 +75,7 @@
     <Property Name="BaoCao" Type="nvarchar(max)" />
     <Property Name="HoanThanh" Type="nvarchar(max)" />
     <Property Name="LinkTaiLieu" Type="varchar(max)" />
+    <Property Name="SoBuoi" Type="int" />
   </EntityType>
   <EntityType Name="Type">
     <Key>
@@ -179,7 +180,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DBLapTrinhWinModelStoreContainer">
+  <EntityContainer Name="QuanLyDeTaiModelStoreContainer">
     <EntitySet Name="ChuyenNganh" EntityType="Self.ChuyenNganh" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DeAn" EntityType="Self.DeAn" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />

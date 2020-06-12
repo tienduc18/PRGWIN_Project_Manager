@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QuanLyDeTaiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChuyenNganh">
+          <Key>
+            <PropertyRef Name="IDChuyenNganh" />
+          </Key>
+          <Property Name="IDChuyenNganh" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="TenChuyenNganh" Type="nvarchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="DeAn">
+          <Key>
+            <PropertyRef Name="IDDeAn" />
+          </Key>
+          <Property Name="IDDeAn" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="TenDeAn" Type="nvarchar" MaxLength="200" />
+          <Property Name="Type" Type="char" MaxLength="1" />
+          <Property Name="IDNhomSV" Type="varchar" MaxLength="15" />
+          <Property Name="GVHD" Type="char" MaxLength="4" />
+          <Property Name="MonHoc" Type="char" MaxLength="10" />
+          <Property Name="ChuyenNganh" Type="char" MaxLength="4" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="DateStart" Type="datetime" />
+          <Property Name="DateEnd" Type="datetime" />
+          <Property Name="TienDo" Type="float" />
+          <Property Name="TaiLieu" Type="varchar" MaxLength="200" />
+          <Property Name="Diem" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="GiangVien">
+          <Key>
+            <PropertyRef Name="MSGV" />
+          </Key>
+          <Property Name="MSGV" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="60" />
+          <Property Name="NgaySinh" Type="date" />
+          <Property Name="QueQuan" Type="nvarchar" MaxLength="50" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+          <Property Name="Khoa" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChuyenNganh" Type="char" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="MonHoc">
+          <Key>
+            <PropertyRef Name="MaMonHoc" />
+          </Key>
+          <Property Name="MaMonHoc" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="TenMonHoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoTiet" Type="int" />
+          <Property Name="SoTinChi" Type="int" />
+        </EntityType>
+        <EntityType Name="NhomSinhVien">
+          <Key>
+            <PropertyRef Name="IDNhom" />
+          </Key>
+          <Property Name="IDNhom" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="TenNhom" Type="nvarchar" MaxLength="200" />
+          <Property Name="ThanhVien" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="SinhVien">
+          <Key>
+            <PropertyRef Name="Mssv" />
+          </Key>
+          <Property Name="Mssv" Type="char" MaxLength="8" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="60" />
+          <Property Name="NgaySinh" Type="date" />
+          <Property Name="QueQuan" Type="nvarchar(max)" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+          <Property Name="Khoa" Type="nvarchar" MaxLength="30" />
+          <Property Name="IDChuyenNganh" Type="char" MaxLength="4" />
+          <Property Name="NamNhapHoc" Type="char" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="TienDo">
+          <Key>
+            <PropertyRef Name="IDDeAn" />
+          </Key>
+          <Property Name="IDDeAn" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="BaoCao" Type="nvarchar(max)" />
+          <Property Name="HoanThanh" Type="nvarchar(max)" />
+          <Property Name="LinkTaiLieu" Type="varchar(max)" />
+          <Property Name="SoBuoi" Type="int" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="IDType" />
+          </Key>
+          <Property Name="IDType" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="LoaiDeAn" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_DeAn_ChuyenNganh">
+          <End Role="ChuyenNganh" Type="Self.ChuyenNganh" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChuyenNganh">
+              <PropertyRef Name="IDChuyenNganh" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="ChuyenNganh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeAn_GiangVien">
+          <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiangVien">
+              <PropertyRef Name="MSGV" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="GVHD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeAn_MonHoc">
+          <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MonHoc">
+              <PropertyRef Name="MaMonHoc" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="MonHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeAn_NhomSinhVien">
+          <End Role="NhomSinhVien" Type="Self.NhomSinhVien" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhomSinhVien">
+              <PropertyRef Name="IDNhom" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="IDNhomSV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeAn_Type">
+          <End Role="Type" Type="Self.Type" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="IDType" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GiangVien_ChuyenNganh">
+          <End Role="ChuyenNganh" Type="Self.ChuyenNganh" Multiplicity="0..1" />
+          <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChuyenNganh">
+              <PropertyRef Name="IDChuyenNganh" />
+            </Principal>
+            <Dependent Role="GiangVien">
+              <PropertyRef Name="ChuyenNganh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SinhVien_ChuyenNganh">
+          <End Role="ChuyenNganh" Type="Self.ChuyenNganh" Multiplicity="0..1" />
+          <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChuyenNganh">
+              <PropertyRef Name="IDChuyenNganh" />
+            </Principal>
+            <Dependent Role="SinhVien">
+              <PropertyRef Name="IDChuyenNganh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TienDo_DeAn">
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="1" />
+          <End Role="TienDo" Type="Self.TienDo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DeAn">
+              <PropertyRef Name="IDDeAn" />
+            </Principal>
+            <Dependent Role="TienDo">
+              <PropertyRef Name="IDDeAn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuanLyDeTaiModelStoreContainer">
+          <EntitySet Name="ChuyenNganh" EntityType="Self.ChuyenNganh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeAn" EntityType="Self.DeAn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GiangVien" EntityType="Self.GiangVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NhomSinhVien" EntityType="Self.NhomSinhVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TienDo" EntityType="Self.TienDo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type" EntityType="Self.Type" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DeAn_ChuyenNganh" Association="Self.FK_DeAn_ChuyenNganh">
+            <End Role="ChuyenNganh" EntitySet="ChuyenNganh" />
+            <End Role="DeAn" EntitySet="DeAn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeAn_GiangVien" Association="Self.FK_DeAn_GiangVien">
+            <End Role="GiangVien" EntitySet="GiangVien" />
+            <End Role="DeAn" EntitySet="DeAn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeAn_MonHoc" Association="Self.FK_DeAn_MonHoc">
+            <End Role="MonHoc" EntitySet="MonHoc" />
+            <End Role="DeAn" EntitySet="DeAn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeAn_NhomSinhVien" Association="Self.FK_DeAn_NhomSinhVien">
+            <End Role="NhomSinhVien" EntitySet="NhomSinhVien" />
+            <End Role="DeAn" EntitySet="DeAn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeAn_Type" Association="Self.FK_DeAn_Type">
+            <End Role="Type" EntitySet="Type" />
+            <End Role="DeAn" EntitySet="DeAn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GiangVien_ChuyenNganh" Association="Self.FK_GiangVien_ChuyenNganh">
+            <End Role="ChuyenNganh" EntitySet="ChuyenNganh" />
+            <End Role="GiangVien" EntitySet="GiangVien" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SinhVien_ChuyenNganh" Association="Self.FK_SinhVien_ChuyenNganh">
+            <End Role="ChuyenNganh" EntitySet="ChuyenNganh" />
+            <End Role="SinhVien" EntitySet="SinhVien" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TienDo_DeAn" Association="Self.FK_TienDo_DeAn">
+            <End Role="DeAn" EntitySet="DeAn" />
+            <End Role="TienDo" EntitySet="TienDo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuanLyDeTaiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ChuyenNganh">
+          <Key>
+            <PropertyRef Name="IDChuyenNganh" />
+          </Key>
+          <Property Name="IDChuyenNganh" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenChuyenNganh" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DeAns" Relationship="Self.FK_DeAn_ChuyenNganh" FromRole="ChuyenNganh" ToRole="DeAn" />
+          <NavigationProperty Name="GiangViens" Relationship="Self.FK_GiangVien_ChuyenNganh" FromRole="ChuyenNganh" ToRole="GiangVien" />
+          <NavigationProperty Name="SinhViens" Relationship="Self.FK_SinhVien_ChuyenNganh" FromRole="ChuyenNganh" ToRole="SinhVien" />
+        </EntityType>
+        <EntityType Name="DeAn">
+          <Key>
+            <PropertyRef Name="IDDeAn" />
+          </Key>
+          <Property Name="IDDeAn" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenDeAn" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="IDNhomSV" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="GVHD" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="MonHoc" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ChuyenNganh" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateStart" Type="DateTime" Precision="3" />
+          <Property Name="DateEnd" Type="DateTime" Precision="3" />
+          <Property Name="TienDo" Type="Double" />
+          <Property Name="TaiLieu" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Diem" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="ChuyenNganh1" Relationship="Self.FK_DeAn_ChuyenNganh" FromRole="DeAn" ToRole="ChuyenNganh" />
+          <NavigationProperty Name="GiangVien" Relationship="Self.FK_DeAn_GiangVien" FromRole="DeAn" ToRole="GiangVien" />
+          <NavigationProperty Name="MonHoc1" Relationship="Self.FK_DeAn_MonHoc" FromRole="DeAn" ToRole="MonHoc" />
+          <NavigationProperty Name="NhomSinhVien" Relationship="Self.FK_DeAn_NhomSinhVien" FromRole="DeAn" ToRole="NhomSinhVien" />
+          <NavigationProperty Name="Type1" Relationship="Self.FK_DeAn_Type" FromRole="DeAn" ToRole="Type" />
+          <NavigationProperty Name="TienDo1" Relationship="Self.FK_TienDo_DeAn" FromRole="DeAn" ToRole="TienDo" />
+        </EntityType>
+        <EntityType Name="GiangVien">
+          <Key>
+            <PropertyRef Name="MSGV" />
+          </Key>
+          <Property Name="MSGV" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="HoTen" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="QueQuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Khoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChuyenNganh" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="ChuyenNganh1" Relationship="Self.FK_GiangVien_ChuyenNganh" FromRole="GiangVien" ToRole="ChuyenNganh" />
+          <NavigationProperty Name="DeAns" Relationship="Self.FK_DeAn_GiangVien" FromRole="GiangVien" ToRole="DeAn" />
+        </EntityType>
+        <EntityType Name="MonHoc">
+          <Key>
+            <PropertyRef Name="MaMonHoc" />
+          </Key>
+          <Property Name="MaMonHoc" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TenMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoTiet" Type="Int32" />
+          <Property Name="SoTinChi" Type="Int32" />
+          <NavigationProperty Name="DeAns" Relationship="Self.FK_DeAn_MonHoc" FromRole="MonHoc" ToRole="DeAn" />
+        </EntityType>
+        <EntityType Name="NhomSinhVien">
+          <Key>
+            <PropertyRef Name="IDNhom" />
+          </Key>
+          <Property Name="IDNhom" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenNhom" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ThanhVien" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DeAns" Relationship="Self.FK_DeAn_NhomSinhVien" FromRole="NhomSinhVien" ToRole="DeAn" />
+        </EntityType>
+        <EntityType Name="SinhVien">
+          <Key>
+            <PropertyRef Name="Mssv" />
+          </Key>
+          <Property Name="Mssv" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="HoTen" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="QueQuan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Khoa" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="IDChuyenNganh" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="NamNhapHoc" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="ChuyenNganh" Relationship="Self.FK_SinhVien_ChuyenNganh" FromRole="SinhVien" ToRole="ChuyenNganh" />
+        </EntityType>
+        <EntityType Name="TienDo">
+          <Key>
+            <PropertyRef Name="IDDeAn" />
+          </Key>
+          <Property Name="IDDeAn" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BaoCao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HoanThanh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LinkTaiLieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SoBuoi" Type="Int32" />
+          <NavigationProperty Name="DeAn" Relationship="Self.FK_TienDo_DeAn" FromRole="TienDo" ToRole="DeAn" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="IDType" />
+          </Key>
+          <Property Name="IDType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LoaiDeAn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DeAns" Relationship="Self.FK_DeAn_Type" FromRole="Type" ToRole="DeAn" />
+        </EntityType>
+        <Association Name="FK_DeAn_ChuyenNganh">
+          <End Role="ChuyenNganh" Type="Self.ChuyenNganh" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChuyenNganh">
+              <PropertyRef Name="IDChuyenNganh" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="ChuyenNganh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GiangVien_ChuyenNganh">
+          <End Role="ChuyenNganh" Type="Self.ChuyenNganh" Multiplicity="0..1" />
+          <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChuyenNganh">
+              <PropertyRef Name="IDChuyenNganh" />
+            </Principal>
+            <Dependent Role="GiangVien">
+              <PropertyRef Name="ChuyenNganh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SinhVien_ChuyenNganh">
+          <End Role="ChuyenNganh" Type="Self.ChuyenNganh" Multiplicity="0..1" />
+          <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChuyenNganh">
+              <PropertyRef Name="IDChuyenNganh" />
+            </Principal>
+            <Dependent Role="SinhVien">
+              <PropertyRef Name="IDChuyenNganh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeAn_GiangVien">
+          <End Role="GiangVien" Type="Self.GiangVien" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GiangVien">
+              <PropertyRef Name="MSGV" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="GVHD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeAn_MonHoc">
+          <End Role="MonHoc" Type="Self.MonHoc" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MonHoc">
+              <PropertyRef Name="MaMonHoc" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="MonHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeAn_NhomSinhVien">
+          <End Role="NhomSinhVien" Type="Self.NhomSinhVien" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NhomSinhVien">
+              <PropertyRef Name="IDNhom" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="IDNhomSV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeAn_Type">
+          <End Role="Type" Type="Self.Type" Multiplicity="0..1" />
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type">
+              <PropertyRef Name="IDType" />
+            </Principal>
+            <Dependent Role="DeAn">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TienDo_DeAn">
+          <End Role="DeAn" Type="Self.DeAn" Multiplicity="1" />
+          <End Role="TienDo" Type="Self.TienDo" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="DeAn">
+              <PropertyRef Name="IDDeAn" />
+            </Principal>
+            <Dependent Role="TienDo">
+              <PropertyRef Name="IDDeAn" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBLapTrinhWin" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChuyenNganhs" EntityType="Self.ChuyenNganh" />
+          <EntitySet Name="DeAns" EntityType="Self.DeAn" />
+          <EntitySet Name="GiangViens" EntityType="Self.GiangVien" />
+          <EntitySet Name="MonHocs" EntityType="Self.MonHoc" />
+          <EntitySet Name="NhomSinhViens" EntityType="Self.NhomSinhVien" />
+          <EntitySet Name="SinhViens" EntityType="Self.SinhVien" />
+          <EntitySet Name="TienDoes" EntityType="Self.TienDo" />
+          <EntitySet Name="Types" EntityType="Self.Type" />
+          <AssociationSet Name="FK_DeAn_ChuyenNganh" Association="Self.FK_DeAn_ChuyenNganh">
+            <End Role="ChuyenNganh" EntitySet="ChuyenNganhs" />
+            <End Role="DeAn" EntitySet="DeAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GiangVien_ChuyenNganh" Association="Self.FK_GiangVien_ChuyenNganh">
+            <End Role="ChuyenNganh" EntitySet="ChuyenNganhs" />
+            <End Role="GiangVien" EntitySet="GiangViens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SinhVien_ChuyenNganh" Association="Self.FK_SinhVien_ChuyenNganh">
+            <End Role="ChuyenNganh" EntitySet="ChuyenNganhs" />
+            <End Role="SinhVien" EntitySet="SinhViens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeAn_GiangVien" Association="Self.FK_DeAn_GiangVien">
+            <End Role="GiangVien" EntitySet="GiangViens" />
+            <End Role="DeAn" EntitySet="DeAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeAn_MonHoc" Association="Self.FK_DeAn_MonHoc">
+            <End Role="MonHoc" EntitySet="MonHocs" />
+            <End Role="DeAn" EntitySet="DeAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeAn_NhomSinhVien" Association="Self.FK_DeAn_NhomSinhVien">
+            <End Role="NhomSinhVien" EntitySet="NhomSinhViens" />
+            <End Role="DeAn" EntitySet="DeAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeAn_Type" Association="Self.FK_DeAn_Type">
+            <End Role="Type" EntitySet="Types" />
+            <End Role="DeAn" EntitySet="DeAns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TienDo_DeAn" Association="Self.FK_TienDo_DeAn">
+            <End Role="DeAn" EntitySet="DeAns" />
+            <End Role="TienDo" EntitySet="TienDoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuanLyDeTaiModelStoreContainer" CdmEntityContainer="DBLapTrinhWin">
+          <EntitySetMapping Name="ChuyenNganhs">
+            <EntityTypeMapping TypeName="QuanLyDeTaiModel.ChuyenNganh">
+              <MappingFragment StoreEntitySet="ChuyenNganh">
+                <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
+                <ScalarProperty Name="TenChuyenNganh" ColumnName="TenChuyenNganh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeAns">
+            <EntityTypeMapping TypeName="QuanLyDeTaiModel.DeAn">
+              <MappingFragment StoreEntitySet="DeAn">
+                <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
+                <ScalarProperty Name="TenDeAn" ColumnName="TenDeAn" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IDNhomSV" ColumnName="IDNhomSV" />
+                <ScalarProperty Name="GVHD" ColumnName="GVHD" />
+                <ScalarProperty Name="MonHoc" ColumnName="MonHoc" />
+                <ScalarProperty Name="ChuyenNganh" ColumnName="ChuyenNganh" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+                <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+                <ScalarProperty Name="TienDo" ColumnName="TienDo" />
+                <ScalarProperty Name="TaiLieu" ColumnName="TaiLieu" />
+                <ScalarProperty Name="Diem" ColumnName="Diem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GiangViens">
+            <EntityTypeMapping TypeName="QuanLyDeTaiModel.GiangVien">
+              <MappingFragment StoreEntitySet="GiangVien">
+                <ScalarProperty Name="MSGV" ColumnName="MSGV" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+                <ScalarProperty Name="ChuyenNganh" ColumnName="ChuyenNganh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MonHocs">
+            <EntityTypeMapping TypeName="QuanLyDeTaiModel.MonHoc">
+              <MappingFragment StoreEntitySet="MonHoc">
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
+                <ScalarProperty Name="SoTiet" ColumnName="SoTiet" />
+                <ScalarProperty Name="SoTinChi" ColumnName="SoTinChi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhomSinhViens">
+            <EntityTypeMapping TypeName="QuanLyDeTaiModel.NhomSinhVien">
+              <MappingFragment StoreEntitySet="NhomSinhVien">
+                <ScalarProperty Name="IDNhom" ColumnName="IDNhom" />
+                <ScalarProperty Name="TenNhom" ColumnName="TenNhom" />
+                <ScalarProperty Name="ThanhVien" ColumnName="ThanhVien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SinhViens">
+            <EntityTypeMapping TypeName="QuanLyDeTaiModel.SinhVien">
+              <MappingFragment StoreEntitySet="SinhVien">
+                <ScalarProperty Name="Mssv" ColumnName="Mssv" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+                <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
+                <ScalarProperty Name="NamNhapHoc" ColumnName="NamNhapHoc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TienDoes">
+            <EntityTypeMapping TypeName="QuanLyDeTaiModel.TienDo">
+              <MappingFragment StoreEntitySet="TienDo">
+                <ScalarProperty Name="IDDeAn" ColumnName="IDDeAn" />
+                <ScalarProperty Name="BaoCao" ColumnName="BaoCao" />
+                <ScalarProperty Name="HoanThanh" ColumnName="HoanThanh" />
+                <ScalarProperty Name="LinkTaiLieu" ColumnName="LinkTaiLieu" />
+                <ScalarProperty Name="SoBuoi" ColumnName="SoBuoi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Types">
+            <EntityTypeMapping TypeName="QuanLyDeTaiModel.Type">
+              <MappingFragment StoreEntitySet="Type">
+                <ScalarProperty Name="IDType" ColumnName="IDType" />
+                <ScalarProperty Name="LoaiDeAn" ColumnName="LoaiDeAn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

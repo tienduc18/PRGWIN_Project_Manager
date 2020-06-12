@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DBLapTrinhWinModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="QuanLyDeTaiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="ChuyenNganh">
     <Key>
       <PropertyRef Name="IDChuyenNganh" />
@@ -89,6 +89,7 @@
     <Property Name="BaoCao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="HoanThanh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="LinkTaiLieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SoBuoi" Type="Int32" />
     <NavigationProperty Name="DeAn" Relationship="Self.FK_TienDo_DeAn" FromRole="TienDo" ToRole="DeAn" />
   </EntityType>
   <EntityType Name="Type">
