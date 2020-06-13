@@ -14,6 +14,8 @@ namespace QuanLyDoAn.View
     public partial class FrmTienDo : Form
     {
         string key;
+        double tienDo;
+        LinkLabel a = new LinkLabel();
         public FrmTienDo(string s)
         {
             InitializeComponent();
@@ -91,6 +93,8 @@ namespace QuanLyDoAn.View
                     z.Diem = txtDiem.Text;
                 }
                 _context.SaveChanges();
+                Khoitao();
+                TaoDTG();
             }
         }
 
@@ -194,7 +198,39 @@ namespace QuanLyDoAn.View
                 get.LinkTaiLieu = link;
                 get.HoanThanh = check;
                 _context.SaveChanges();
+                Khoitao();
+                TaoDTG();
+                tienDo = (double)(BaoCaoTienDoController.GetHoanThanh(check).Count() - 1) / int.Parse(txtSoBuoi.Text);
+                tienDo = Math.Round(tienDo, 2);
+                var get1 = (from u in _context.DeAns
+                            where u.IDDeAn == key
+                            select u).FirstOrDefault();
+                get1.TienDo = tienDo;
+                _context.SaveChanges();
             }
+        }
+
+        private void FrmTienDo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FrmQuanLyDeAn h = new FrmQuanLyDeAn();
+            h.Show();
+        }
+
+        private void dtgTienDo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            //a = (sender as DataGridView).Rows[e.RowIndex].Cells[e.ColumnIndex].Value as LinkLabel;
+            //a.Click += A_Click;
+            //a.LinkVisited = true;
+            //string s = a.Text;
+            System.Diagnostics.Process.Start((sender as DataGridView).Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+
+
+        }
+
+        private void A_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

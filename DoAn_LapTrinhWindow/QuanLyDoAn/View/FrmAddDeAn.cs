@@ -87,5 +87,11 @@ namespace QuanLyDoAn.View
             MessageBox.Show("Thêm đề án thành công!");
             #endregion
         }
+
+        private void btnDangKyNhom_Click(object sender, EventArgs e)
+        {
+            FrmAddNhomSinhVien frmNhom = new FrmAddNhomSinhVien();
+            frmNhom.Show();
+        }
     }
 }

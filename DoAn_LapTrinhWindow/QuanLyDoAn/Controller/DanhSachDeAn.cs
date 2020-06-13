@@ -25,7 +25,7 @@ namespace QuanLyDoAn.Controller
         public string HoTenGV { get; set; }
         public DateTime? DateStart { get; set; }
         public DateTime? DateEnd { get; set; }
-        public double? TienDo { get; set; }
+        public string TienDo { get; set; }
         public string Diem { get; set; }
         
 

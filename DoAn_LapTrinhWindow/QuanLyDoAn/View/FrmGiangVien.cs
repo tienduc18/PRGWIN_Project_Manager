@@ -47,7 +47,7 @@ namespace QuanLyDoAn.View
                 var x = from u in _context.GiangViens
                         where u.MSGV.Contains(msgv) && u.HoTen.Contains(name) && u.GioiTinh.Contains(gioitinh) && u.QueQuan.Contains(quequan) && u.ChuyenNganh.Contains(chuyennganh)
 
-                        select new { u.MSGV, u.HoTen, u.NgaySinh, u.GioiTinh, u.QueQuan, u.Khoa, u.ChuyenNganh };
+                        select new { u.MSGV, u.HoTen, u.NgaySinh, u.GioiTinh, u.QueQuan, u.ChuyenNganh1.TenChuyenNganh };
                 
                 this.dtgThongTinGiangVien.DataSource = x.ToList();
             }
