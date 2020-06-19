@@ -105,6 +105,7 @@
     </Compile>
     <Compile Include="ViewModel\ChuyenNganhViewModel.cs" />
     <Compile Include="ViewModel\GiangVienViewModel.cs" />
+    <Compile Include="ViewModel\SinhVienViewModel.cs" />
     <Compile Include="View\FrmAddDeAn.cs">
       <SubType>Form</SubType>
     </Compile>

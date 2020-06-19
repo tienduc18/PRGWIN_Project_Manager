@@ -1,4 +1,5 @@
 ﻿using QuanLyDoAn.Controller;
+using QuanLyDoAn.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,15 +17,17 @@ namespace QuanLyDoAn.View
         public FrmSinhVien()
         {
             InitializeComponent();
-            this.cMSSV.DataPropertyName = nameof(SinhVien.Mssv);
-            this.cHoTen.DataPropertyName = nameof(SinhVien.HoTen);
-            this.cNgaySinh.DataPropertyName = nameof(SinhVien.NgaySinh);
-            this.cGioiTinh.DataPropertyName = nameof(SinhVien.GioiTinh);
+            this.cMSSV.DataPropertyName = nameof(SinhVienViewModel.Mssv);
+            this.cHoTen.DataPropertyName = nameof(SinhVienViewModel.HoTen);
+            this.cNgaySinh.DataPropertyName = nameof(SinhVienViewModel.NgaySinh);
+            this.cGioiTinh.DataPropertyName = nameof(SinhVienViewModel.GioiTinh);
 
-            this.cQueQuan.DataPropertyName = nameof(SinhVien.QueQuan);
-            this.cKhoa.DataPropertyName = nameof(SinhVien.Khoa);
-            this.cChuyenNganh.DataPropertyName = nameof(ChuyenNganh.TenChuyenNganh);
-            this.cNamNhapHoc.DataPropertyName = nameof(SinhVien.NamNhapHoc);
+            this.cQueQuan.DataPropertyName = nameof(SinhVienViewModel.QueQuan);
+            this.cKhoa.DataPropertyName = nameof(SinhVienViewModel.Khoa);
+            this.cChuyenNganh.DataPropertyName = nameof(SinhVienViewModel.ChuyenNganh);
+            this.cNamNhapHoc.DataPropertyName = nameof(SinhVienViewModel.NamNhapHoc);
+            this.cKhoa.Visible = false;
+            dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -65,7 +68,8 @@ namespace QuanLyDoAn.View
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddStudent formAdd = new frmAddStudent();
-            formAdd.Show();                         
+            formAdd.Show();
+            dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -73,6 +77,7 @@ namespace QuanLyDoAn.View
             SinhVien student = StudentController.GetStudent(dtgThongTinSinhVien.CurrentRow.Cells[0].Value.ToString());
             frmUpdateStudent formUpdate = new frmUpdateStudent(student);
             formUpdate.Show();
+            dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
         }
     }
 }

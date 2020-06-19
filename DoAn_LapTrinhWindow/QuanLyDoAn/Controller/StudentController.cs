@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyDoAn.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
@@ -37,6 +38,27 @@ namespace QuanLyDoAn.Controller
                 _context.SinhViens.AddOrUpdate(student);                
                 _context.SaveChanges();               
                 return true;
+            }
+        }
+        public static List<SinhVienViewModel> GetListStudent()
+        {
+            using(var _context = new DBLapTrinhWin())
+            {
+                var model = _context.SinhViens;              
+
+                var result = model.Select(x => new SinhVienViewModel
+                {
+                    Mssv = x.Mssv,
+                    HoTen = x.HoTen,
+                    NgaySinh = x.NgaySinh.HasValue ? x.NgaySinh.Value : DateTime.MinValue,
+                    QueQuan = x.QueQuan,
+                    GioiTinh = x.GioiTinh,
+                    Khoa = x.Khoa,
+                    ChuyenNganh = x.ChuyenNganh.TenChuyenNganh,
+                    NamNhapHoc = x.NamNhapHoc,
+                }).ToList();
+
+                return result;
             }
         }
     }
