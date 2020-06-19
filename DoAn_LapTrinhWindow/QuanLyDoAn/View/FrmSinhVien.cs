@@ -27,7 +27,7 @@ namespace QuanLyDoAn.View
 
             this.cQueQuan.DataPropertyName = nameof(SinhVienViewModel.QueQuan);
             this.cKhoa.DataPropertyName = nameof(SinhVienViewModel.Khoa);
-            this.cChuyenNganh.DataPropertyName = nameof(SinhVienViewModel.ChuyenNganh);
+            this.cChuyenNganh.DataPropertyName = nameof(SinhVien.IDChuyenNganh);
             this.cNamNhapHoc.DataPropertyName = nameof(SinhVienViewModel.NamNhapHoc);
             dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
         }
