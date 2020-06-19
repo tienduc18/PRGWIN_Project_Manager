@@ -90,12 +90,13 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dtgThongTinSinhVien);
             this.splitContainer1.Size = new System.Drawing.Size(1067, 554);
-            this.splitContainer1.SplitterDistance = 274;
+            this.splitContainer1.SplitterDistance = 273;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // cmbChuyenNganh
             // 
+            this.cmbChuyenNganh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChuyenNganh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbChuyenNganh.FormattingEnabled = true;
             this.cmbChuyenNganh.Items.AddRange(new object[] {
@@ -106,10 +107,10 @@
             "HTTT",
             "KTDL",
             "MTT"});
-            this.cmbChuyenNganh.Location = new System.Drawing.Point(733, 103);
+            this.cmbChuyenNganh.Location = new System.Drawing.Point(733, 98);
             this.cmbChuyenNganh.Margin = new System.Windows.Forms.Padding(4);
             this.cmbChuyenNganh.Name = "cmbChuyenNganh";
-            this.cmbChuyenNganh.Size = new System.Drawing.Size(179, 34);
+            this.cmbChuyenNganh.Size = new System.Drawing.Size(148, 34);
             this.cmbChuyenNganh.TabIndex = 13;
             // 
             // cbGioiTinh
@@ -129,10 +130,10 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(606, 212);
+            this.btnUpdate.Location = new System.Drawing.Point(627, 212);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(120, 48);
+            this.btnUpdate.Size = new System.Drawing.Size(100, 48);
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -141,7 +142,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(766, 212);
+            this.btnAdd.Location = new System.Drawing.Point(765, 212);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 48);
@@ -282,7 +283,7 @@
             this.dtgThongTinSinhVien.Margin = new System.Windows.Forms.Padding(4);
             this.dtgThongTinSinhVien.Name = "dtgThongTinSinhVien";
             this.dtgThongTinSinhVien.RowHeadersWidth = 51;
-            this.dtgThongTinSinhVien.Size = new System.Drawing.Size(1067, 275);
+            this.dtgThongTinSinhVien.Size = new System.Drawing.Size(1067, 276);
             this.dtgThongTinSinhVien.TabIndex = 0;
             // 
             // cMSSV

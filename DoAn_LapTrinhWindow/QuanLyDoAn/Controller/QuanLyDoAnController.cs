@@ -8,11 +8,6 @@ namespace QuanLyDoAn.Controller
 {
     public class QuanLyDoAnController
     {
-        public  static void LoadDanhSachQuanLyDoAn()
-        {
-            
-            
-        }
     }
     
 }

@@ -31,21 +31,6 @@ namespace QuanLyDoAn.View
             this.cNamNhapHoc.DataPropertyName = nameof(SinhVienViewModel.NamNhapHoc);
             dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
         }
-        //public FrmSinhVien()
-        //{
-        //    InitializeComponent();
-        //    this.cMSSV.DataPropertyName = nameof(SinhVienViewModel.Mssv);
-        //    this.cHoTen.DataPropertyName = nameof(SinhVienViewModel.HoTen);
-        //    this.cNgaySinh.DataPropertyName = nameof(SinhVienViewModel.NgaySinh);
-        //    this.cGioiTinh.DataPropertyName = nameof(SinhVienViewModel.GioiTinh);
-
-        //    this.cQueQuan.DataPropertyName = nameof(SinhVienViewModel.QueQuan);
-        //    this.cKhoa.DataPropertyName = nameof(SinhVienViewModel.Khoa);
-        //    this.cChuyenNganh.DataPropertyName = nameof(SinhVienViewModel.ChuyenNganh);
-        //    this.cNamNhapHoc.DataPropertyName = nameof(SinhVienViewModel.NamNhapHoc);
-        //    this.cKhoa.Visible = false;
-        //    dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
-        //}
 
         private void btnFind_Click(object sender, EventArgs e)
         {
@@ -67,16 +52,6 @@ namespace QuanLyDoAn.View
                 }
                 var i = x.First();
                 
-                //this.cMSSV.DataPropertyName = nameof(i.Mssv);
-                //this.cHoTen.DataPropertyName = nameof(i.HoTen);
-                //this.cNgaySinh.DataPropertyName = nameof(i.NgaySinh);
-                //this.cGioiTinh.DataPropertyName = nameof(i.GioiTinh);
-                
-                //this.cQueQuan.DataPropertyName = nameof(i.QueQuan);
-                //this.cKhoa.DataPropertyName = nameof(i.Khoa);
-                //this.cChuyenNganh.DataPropertyName = nameof(i.TenChuyenNganh);
-                //this.cNamNhapHoc.DataPropertyName = nameof(i.NamNhapHoc);
-                
                 this.dtgThongTinSinhVien.DataSource = x.ToList();
 
             }
@@ -85,9 +60,7 @@ namespace QuanLyDoAn.View
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddStudent formAdd = new frmAddStudent();
-            formAdd.Show();
-            //if (formAdd.IsDisposed)
-                dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
+            formAdd.Show();                         
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -95,8 +68,6 @@ namespace QuanLyDoAn.View
             SinhVien student = StudentController.GetStudent(dtgThongTinSinhVien.CurrentRow.Cells[0].Value.ToString());
             frmUpdateStudent formUpdate = new frmUpdateStudent(student);
             formUpdate.Show();
-            //if (formUpdate.IsDisposed)
-                dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
         }
     }
 }

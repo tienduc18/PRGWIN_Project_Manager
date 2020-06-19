@@ -52,6 +52,7 @@ namespace QuanLyDoAn.Controller
                 return result;
             }
         }
+
         public static List<GiangVien> GetListGiangVien()
         {
             using (var _context = new DBLapTrinhWin())

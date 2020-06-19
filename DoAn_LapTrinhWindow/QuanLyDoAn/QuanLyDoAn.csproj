@@ -106,16 +106,22 @@
     <Compile Include="ViewModel\ChuyenNganhViewModel.cs" />
     <Compile Include="ViewModel\GiangVienViewModel.cs" />
     <Compile Include="ViewModel\SinhVienViewModel.cs" />
-    <Compile Include="View\FrmAddDeAn.cs" />
+    <Compile Include="View\FrmAddDeAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\FrmAddDeAn.designer.cs">
       <DependentUpon>FrmAddDeAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmAddNhomSinhVien.cs" />
+    <Compile Include="View\FrmAddNhomSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\FrmAddNhomSinhVien.designer.cs">
       <DependentUpon>FrmAddNhomSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmAddOrUpdateGiangVien.cs" />
-    <Compile Include="View\frmAddOrUpdateGiangVien.designer.cs">
+    <Compile Include="View\frmAddOrUpdateGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAddOrUpdateGiangVien.Designer.cs">
       <DependentUpon>frmAddOrUpdateGiangVien.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmAddStudent.cs">
@@ -124,15 +130,21 @@
     <Compile Include="View\frmAddStudent.Designer.cs">
       <DependentUpon>frmAddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmGiangVien.cs" />
-    <Compile Include="View\FrmGiangVien.designer.cs">
+    <Compile Include="View\FrmGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmGiangVien.Designer.cs">
       <DependentUpon>FrmGiangVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmMain.cs" />
-    <Compile Include="View\FrmMain.designer.cs">
+    <Compile Include="View\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmQuanLyDeAn.cs" />
+    <Compile Include="View\FrmQuanLyDeAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\FrmQuanLyDeAn.designer.cs">
       <DependentUpon>FrmQuanLyDeAn.cs</DependentUpon>
     </Compile>
@@ -156,7 +168,9 @@
     <Compile Include="View\FrmSinhVien.Designer.cs">
       <DependentUpon>FrmSinhVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmTienDo.cs" />
+    <Compile Include="View\FrmTienDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="View\FrmTienDo.designer.cs">
       <DependentUpon>FrmTienDo.cs</DependentUpon>
     </Compile>

@@ -53,7 +53,8 @@
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(598, 294);
+            this.btnOK.Location = new System.Drawing.Point(597, 294);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(103, 36);
             this.btnOK.TabIndex = 21;
@@ -65,7 +66,8 @@
             // 
             this.dtpNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(150, 229);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(149, 229);
+            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(160, 30);
             this.dtpNgaySinh.TabIndex = 20;
@@ -78,7 +80,8 @@
             this.cmbGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cmbGioiTinh.Location = new System.Drawing.Point(146, 164);
+            this.cmbGioiTinh.Location = new System.Drawing.Point(147, 164);
+            this.cmbGioiTinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbGioiTinh.Name = "cmbGioiTinh";
             this.cmbGioiTinh.Size = new System.Drawing.Size(121, 33);
             this.cmbGioiTinh.TabIndex = 19;
@@ -127,7 +130,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(364, 173);
+            this.label5.Location = new System.Drawing.Point(364, 174);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 25);
             this.label5.TabIndex = 18;
@@ -166,15 +169,17 @@
             // txtHoTen
             // 
             this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.Location = new System.Drawing.Point(146, 93);
+            this.txtHoTen.Location = new System.Drawing.Point(147, 94);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(190, 30);
+            this.txtHoTen.Size = new System.Drawing.Size(191, 30);
             this.txtHoTen.TabIndex = 9;
             // 
             // txtNamNhapHoc
             // 
             this.txtNamNhapHoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNamNhapHoc.Location = new System.Drawing.Point(880, 23);
+            this.txtNamNhapHoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNamNhapHoc.Name = "txtNamNhapHoc";
             this.txtNamNhapHoc.Size = new System.Drawing.Size(128, 30);
             this.txtNamNhapHoc.TabIndex = 8;
@@ -183,6 +188,7 @@
             // 
             this.txtQueQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQueQuan.Location = new System.Drawing.Point(520, 23);
+            this.txtQueQuan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQueQuan.Name = "txtQueQuan";
             this.txtQueQuan.Size = new System.Drawing.Size(181, 30);
             this.txtQueQuan.TabIndex = 6;
@@ -191,15 +197,17 @@
             // 
             this.txtMSSV.Enabled = false;
             this.txtMSSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMSSV.Location = new System.Drawing.Point(146, 25);
+            this.txtMSSV.Location = new System.Drawing.Point(147, 25);
+            this.txtMSSV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMSSV.Name = "txtMSSV";
-            this.txtMSSV.Size = new System.Drawing.Size(190, 30);
+            this.txtMSSV.Size = new System.Drawing.Size(191, 30);
             this.txtMSSV.TabIndex = 10;
             // 
             // txtKhoa
             // 
             this.txtKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhoa.Location = new System.Drawing.Point(520, 93);
+            this.txtKhoa.Location = new System.Drawing.Point(520, 94);
+            this.txtKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtKhoa.Name = "txtKhoa";
             this.txtKhoa.Size = new System.Drawing.Size(181, 30);
             this.txtKhoa.TabIndex = 5;
@@ -222,6 +230,7 @@
             "KTDL",
             "MTT"});
             this.cmbChuyenNganh.Location = new System.Drawing.Point(520, 167);
+            this.cmbChuyenNganh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbChuyenNganh.Name = "cmbChuyenNganh";
             this.cmbChuyenNganh.Size = new System.Drawing.Size(121, 33);
             this.cmbChuyenNganh.TabIndex = 19;
@@ -230,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 355);
+            this.ClientSize = new System.Drawing.Size(1024, 354);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.dtpNgaySinh);
             this.Controls.Add(this.cmbChuyenNganh);
@@ -248,6 +257,7 @@
             this.Controls.Add(this.txtQueQuan);
             this.Controls.Add(this.txtMSSV);
             this.Controls.Add(this.txtKhoa);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmUpdateStudent";
             this.Text = "frmUpdate";
             ((System.ComponentModel.ISupportInitialize)(this.erpUpdate)).EndInit();

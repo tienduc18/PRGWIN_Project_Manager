@@ -1,5 +1,4 @@
-﻿using QuanLyDoAn.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
@@ -61,6 +60,7 @@ namespace QuanLyDoAn.Controller
         //        return result;
         //    }
         //}
+
         public static List<SinhVien> GetListStudent()
         {
             using (var _context = new DBLapTrinhWin())

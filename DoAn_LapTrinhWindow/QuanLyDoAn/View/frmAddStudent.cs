@@ -62,14 +62,9 @@ namespace QuanLyDoAn.View
             dtpNgaySinh.ResetText();
             txtQueQuan.Clear();
             txtKhoa.Clear();
-            txtNamNhapHoc.Clear();           
+            //cmbChuyenNganh.Clear();
+            txtNamNhapHoc.Clear();
             this.Close();
-        }        
-
-        //private void frmAddStudent_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    FrmSinhVien frmSinhVien = new FrmSinhVien();
-        //    frmSinhVien.Show();
-        //}
+        }
     }
 }

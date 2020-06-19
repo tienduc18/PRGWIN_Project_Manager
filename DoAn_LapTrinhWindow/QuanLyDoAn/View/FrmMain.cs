@@ -38,7 +38,6 @@ namespace QuanLyDoAn.View
             if(this.frmSinhVien is null || this.frmSinhVien.IsDisposed)
             {
                 this.frmSinhVien = new FrmSinhVien(ref sinhViens);
-                //this.frmSinhVien = new FrmSinhVien();
                 this.frmSinhVien.MdiParent = this;
                 this.frmSinhVien.Show();
             }
