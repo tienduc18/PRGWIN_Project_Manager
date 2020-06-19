@@ -14,9 +14,12 @@ namespace QuanLyDoAn.View
 {
     public partial class FrmSinhVien : Form
     {
-        public FrmSinhVien()
+        private List<SinhVien> sinhViens;
+        public FrmSinhVien(ref List<SinhVien> dsSV)
         {
             InitializeComponent();
+
+            this.sinhViens = dsSV;
             this.cMSSV.DataPropertyName = nameof(SinhVienViewModel.Mssv);
             this.cHoTen.DataPropertyName = nameof(SinhVienViewModel.HoTen);
             this.cNgaySinh.DataPropertyName = nameof(SinhVienViewModel.NgaySinh);
@@ -26,9 +29,23 @@ namespace QuanLyDoAn.View
             this.cKhoa.DataPropertyName = nameof(SinhVienViewModel.Khoa);
             this.cChuyenNganh.DataPropertyName = nameof(SinhVienViewModel.ChuyenNganh);
             this.cNamNhapHoc.DataPropertyName = nameof(SinhVienViewModel.NamNhapHoc);
-            this.cKhoa.Visible = false;
             dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
         }
+        //public FrmSinhVien()
+        //{
+        //    InitializeComponent();
+        //    this.cMSSV.DataPropertyName = nameof(SinhVienViewModel.Mssv);
+        //    this.cHoTen.DataPropertyName = nameof(SinhVienViewModel.HoTen);
+        //    this.cNgaySinh.DataPropertyName = nameof(SinhVienViewModel.NgaySinh);
+        //    this.cGioiTinh.DataPropertyName = nameof(SinhVienViewModel.GioiTinh);
+
+        //    this.cQueQuan.DataPropertyName = nameof(SinhVienViewModel.QueQuan);
+        //    this.cKhoa.DataPropertyName = nameof(SinhVienViewModel.Khoa);
+        //    this.cChuyenNganh.DataPropertyName = nameof(SinhVienViewModel.ChuyenNganh);
+        //    this.cNamNhapHoc.DataPropertyName = nameof(SinhVienViewModel.NamNhapHoc);
+        //    this.cKhoa.Visible = false;
+        //    dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
+        //}
 
         private void btnFind_Click(object sender, EventArgs e)
         {
@@ -36,7 +53,7 @@ namespace QuanLyDoAn.View
             string name = txtHoTen.Text;
             string gioitinh = cbGioiTinh.Text;
             string quequan = txtQueQuan.Text;
-            string chuyennganh = txtChuyenNganh.Text;
+            string chuyennganh = cmbChuyenNganh.Text;
             string namnhaphoc = txtNamNhapHoc.Text;
             using (var _context = new DBLapTrinhWin())
             {
@@ -69,7 +86,8 @@ namespace QuanLyDoAn.View
         {
             frmAddStudent formAdd = new frmAddStudent();
             formAdd.Show();
-            dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
+            //if (formAdd.IsDisposed)
+                dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -77,7 +95,8 @@ namespace QuanLyDoAn.View
             SinhVien student = StudentController.GetStudent(dtgThongTinSinhVien.CurrentRow.Cells[0].Value.ToString());
             frmUpdateStudent formUpdate = new frmUpdateStudent(student);
             formUpdate.Show();
-            dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
+            //if (formUpdate.IsDisposed)
+                dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
         }
     }
 }

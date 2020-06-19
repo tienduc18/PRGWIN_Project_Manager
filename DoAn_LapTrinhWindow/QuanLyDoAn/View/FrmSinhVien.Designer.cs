@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cmbChuyenNganh = new System.Windows.Forms.ComboBox();
             this.cbGioiTinh = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.txtNamNhapHoc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtChuyenNganh = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.cKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cChuyenNganh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNamNhapHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,13 +70,13 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.cmbChuyenNganh);
             this.splitContainer1.Panel1.Controls.Add(this.cbGioiTinh);
             this.splitContainer1.Panel1.Controls.Add(this.btnUpdate);
             this.splitContainer1.Panel1.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel1.Controls.Add(this.btnFind);
             this.splitContainer1.Panel1.Controls.Add(this.txtNamNhapHoc);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
-            this.splitContainer1.Panel1.Controls.Add(this.txtChuyenNganh);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.txtQueQuan);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
@@ -94,8 +94,27 @@
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
+            // cmbChuyenNganh
+            // 
+            this.cmbChuyenNganh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbChuyenNganh.FormattingEnabled = true;
+            this.cmbChuyenNganh.Items.AddRange(new object[] {
+            "ANM",
+            "CNPM",
+            "CNTT",
+            "DDT",
+            "HTTT",
+            "KTDL",
+            "MTT"});
+            this.cmbChuyenNganh.Location = new System.Drawing.Point(733, 103);
+            this.cmbChuyenNganh.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbChuyenNganh.Name = "cmbChuyenNganh";
+            this.cmbChuyenNganh.Size = new System.Drawing.Size(179, 34);
+            this.cmbChuyenNganh.TabIndex = 13;
+            // 
             // cbGioiTinh
             // 
+            this.cbGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGioiTinh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGioiTinh.FormattingEnabled = true;
             this.cbGioiTinh.Items.AddRange(new object[] {
@@ -106,6 +125,18 @@
             this.cbGioiTinh.Name = "cbGioiTinh";
             this.cbGioiTinh.Size = new System.Drawing.Size(148, 34);
             this.cbGioiTinh.TabIndex = 13;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(606, 212);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(120, 48);
+            this.btnUpdate.TabIndex = 12;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -150,15 +181,6 @@
             this.label6.Size = new System.Drawing.Size(159, 26);
             this.label6.TabIndex = 10;
             this.label6.Text = "Năm nhập học";
-            // 
-            // txtChuyenNganh
-            // 
-            this.txtChuyenNganh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChuyenNganh.Location = new System.Drawing.Point(733, 102);
-            this.txtChuyenNganh.Margin = new System.Windows.Forms.Padding(4);
-            this.txtChuyenNganh.Name = "txtChuyenNganh";
-            this.txtChuyenNganh.Size = new System.Drawing.Size(265, 35);
-            this.txtChuyenNganh.TabIndex = 9;
             // 
             // label5
             // 
@@ -312,18 +334,6 @@
             this.cNamNhapHoc.MinimumWidth = 6;
             this.cNamNhapHoc.Name = "cNamNhapHoc";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(626, 212);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 48);
-            this.btnUpdate.TabIndex = 12;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // FrmSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -349,7 +359,6 @@
         private System.Windows.Forms.DataGridView dtgThongTinSinhVien;
         private System.Windows.Forms.TextBox txtNamNhapHoc;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtChuyenNganh;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtQueQuan;
         private System.Windows.Forms.Label label4;
@@ -370,5 +379,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cNamNhapHoc;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.ComboBox cmbChuyenNganh;
     }
 }

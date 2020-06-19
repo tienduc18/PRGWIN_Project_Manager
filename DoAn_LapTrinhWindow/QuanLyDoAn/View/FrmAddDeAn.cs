@@ -13,10 +13,10 @@ namespace QuanLyDoAn.View
 {
     public partial class FrmAddDeAn : Form
     {
-        public FrmAddDeAn()
+        public FrmAddDeAn(string s)
         {
             InitializeComponent();
-            
+            this.txtIDNhom.Text = s;
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
@@ -92,6 +92,37 @@ namespace QuanLyDoAn.View
         {
             FrmAddNhomSinhVien frmNhom = new FrmAddNhomSinhVien();
             frmNhom.Show();
+            this.Close();
+        }
+
+        private void txtGVHD_TextChanged(object sender, EventArgs e)
+        {
+            lstViewGVHD.Items.Clear();
+            string s = txtGVHD.Text;
+            using (var _context = new DBLapTrinhWin())
+            {
+                var x = from u in _context.GiangViens
+                        where u.MSGV.Contains(s)
+                        select u;
+                foreach(var i in x)
+                {
+                    string noi = i.MSGV + ": " + i.HoTen;
+                    lstViewGVHD.Items.Add(noi);
+                }
+                
+            }
+            if (s == string.Empty)
+                this.lstViewGVHD.Visible = false;
+            else
+                this.lstViewGVHD.Visible = true;
+        }
+
+        private void lstViewGVHD_DoubleClick(object sender, EventArgs e)
+        {
+            string[] cat;
+            cat = this.lstViewGVHD.SelectedItems[0].Text.Split(':');
+            txtGVHD.Text = cat[0];
+            lstViewGVHD.Visible = false;
         }
     }
 }

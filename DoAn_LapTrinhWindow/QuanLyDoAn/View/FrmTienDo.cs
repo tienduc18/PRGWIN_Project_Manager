@@ -23,6 +23,7 @@ namespace QuanLyDoAn.View
             this.cNoiDungBaoCao.DataPropertyName = nameof(TienDoBaoCao.NoiDung);
             this.cLinkTaiLieu.DataPropertyName = nameof(TienDoBaoCao.Link);
             this.cHoanThanh.DataPropertyName = nameof(TienDoBaoCao.HoanThanh);
+            this.cSoBuoi.DataPropertyName = nameof(TienDoBaoCao.SoBuoi);
             key = s.Trim();
             
             Khoitao();
@@ -78,7 +79,7 @@ namespace QuanLyDoAn.View
                         select u;
                 if (x.Count() != 0)
                 {
-                    x.First().SoBuoi = int.Parse(txtSoBuoi.Text);
+                    x.First().SoBuoi = int.Parse(txtSoBuoi.Text.Trim());
                 }
 
                 var y = from u in _context.DeAns
@@ -90,7 +91,7 @@ namespace QuanLyDoAn.View
 
                     z.DateStart = dtpDateStart.Value;
                     z.DateEnd = dtpDateEnd.Value;
-                    z.Diem = txtDiem.Text;
+                    z.Diem = txtDiem.Text.Trim();
                 }
                 _context.SaveChanges();
                 Khoitao();
@@ -212,8 +213,8 @@ namespace QuanLyDoAn.View
 
         private void FrmTienDo_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FrmQuanLyDeAn h = new FrmQuanLyDeAn();
-            h.Show();
+            //FrmQuanLyDeAn h = new FrmQuanLyDeAn();
+            //h.Show();
         }
 
         private void dtgTienDo_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -231,6 +232,11 @@ namespace QuanLyDoAn.View
         private void A_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void FrmTienDo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

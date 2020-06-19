@@ -82,6 +82,7 @@
             this.IsMdiContainer = true;
             this.Name = "FrmMain";
             this.Text = "FrmMain";
+            this.MdiChildActivate += new System.EventHandler(this.FrmMain_MdiChildActivate);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -40,25 +40,47 @@ namespace QuanLyDoAn.Controller
                 return true;
             }
         }
-        public static List<SinhVienViewModel> GetListStudent()
+        //public static List<SinhVienViewModel> GetListStudent()
+        //{
+        //    using(var _context = new DBLapTrinhWin())
+        //    {
+        //        var model = _context.SinhViens;              
+
+        //        var result = model.Select(x => new SinhVienViewModel
+        //        {
+        //            Mssv = x.Mssv,
+        //            HoTen = x.HoTen,
+        //            NgaySinh = x.NgaySinh.HasValue ? x.NgaySinh.Value : DateTime.MinValue,
+        //            QueQuan = x.QueQuan,
+        //            GioiTinh = x.GioiTinh,
+        //            Khoa = x.Khoa,
+        //            ChuyenNganh = x.ChuyenNganh.TenChuyenNganh,
+        //            NamNhapHoc = x.NamNhapHoc,
+        //        }).ToList();
+
+        //        return result;
+        //    }
+        //}
+        public static List<SinhVien> GetListStudent()
         {
-            using(var _context = new DBLapTrinhWin())
+            using (var _context = new DBLapTrinhWin())
             {
-                var model = _context.SinhViens;              
+                var task = (from t in _context.SinhViens.Include("ChuyenNganh").AsEnumerable()
+                            select t)
+                            .Select(x => new SinhVien
+                            {
+                                Mssv = x.Mssv,
+                                HoTen = x.HoTen,
+                                NgaySinh = x.NgaySinh,
+                                QueQuan = x.QueQuan,
+                                GioiTinh = x.GioiTinh,
+                                Khoa = x.Khoa,
+                                IDChuyenNganh = x.IDChuyenNganh,
+                                NamNhapHoc = x.NamNhapHoc,
+                                ChuyenNganh = x.ChuyenNganh
+                            }).ToList();
 
-                var result = model.Select(x => new SinhVienViewModel
-                {
-                    Mssv = x.Mssv,
-                    HoTen = x.HoTen,
-                    NgaySinh = x.NgaySinh.HasValue ? x.NgaySinh.Value : DateTime.MinValue,
-                    QueQuan = x.QueQuan,
-                    GioiTinh = x.GioiTinh,
-                    Khoa = x.Khoa,
-                    ChuyenNganh = x.ChuyenNganh.TenChuyenNganh,
-                    NamNhapHoc = x.NamNhapHoc,
-                }).ToList();
-
-                return result;
+                return task;
             }
         }
     }

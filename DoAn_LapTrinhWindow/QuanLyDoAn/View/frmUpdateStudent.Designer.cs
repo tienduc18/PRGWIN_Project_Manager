@@ -42,11 +42,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.txtNamNhapHoc = new System.Windows.Forms.TextBox();
-            this.txtChuyenNganh = new System.Windows.Forms.TextBox();
             this.txtQueQuan = new System.Windows.Forms.TextBox();
             this.txtMSSV = new System.Windows.Forms.TextBox();
             this.txtKhoa = new System.Windows.Forms.TextBox();
             this.erpUpdate = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbChuyenNganh = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.erpUpdate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +72,7 @@
             // 
             // cmbGioiTinh
             // 
+            this.cmbGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGioiTinh.FormattingEnabled = true;
             this.cmbGioiTinh.Items.AddRange(new object[] {
@@ -178,14 +179,6 @@
             this.txtNamNhapHoc.Size = new System.Drawing.Size(128, 30);
             this.txtNamNhapHoc.TabIndex = 8;
             // 
-            // txtChuyenNganh
-            // 
-            this.txtChuyenNganh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChuyenNganh.Location = new System.Drawing.Point(520, 170);
-            this.txtChuyenNganh.Name = "txtChuyenNganh";
-            this.txtChuyenNganh.Size = new System.Drawing.Size(181, 30);
-            this.txtChuyenNganh.TabIndex = 7;
-            // 
             // txtQueQuan
             // 
             this.txtQueQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -215,13 +208,32 @@
             // 
             this.erpUpdate.ContainerControl = this;
             // 
-            // frmUpdate
+            // cmbChuyenNganh
+            // 
+            this.cmbChuyenNganh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbChuyenNganh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbChuyenNganh.FormattingEnabled = true;
+            this.cmbChuyenNganh.Items.AddRange(new object[] {
+            "ANM",
+            "CNPM",
+            "CNTT",
+            "DDT",
+            "HTTT",
+            "KTDL",
+            "MTT"});
+            this.cmbChuyenNganh.Location = new System.Drawing.Point(520, 167);
+            this.cmbChuyenNganh.Name = "cmbChuyenNganh";
+            this.cmbChuyenNganh.Size = new System.Drawing.Size(121, 33);
+            this.cmbChuyenNganh.TabIndex = 19;
+            // 
+            // frmUpdateStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 355);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.dtpNgaySinh);
+            this.Controls.Add(this.cmbChuyenNganh);
             this.Controls.Add(this.cmbGioiTinh);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -233,11 +245,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.txtNamNhapHoc);
-            this.Controls.Add(this.txtChuyenNganh);
             this.Controls.Add(this.txtQueQuan);
             this.Controls.Add(this.txtMSSV);
             this.Controls.Add(this.txtKhoa);
-            this.Name = "frmUpdate";
+            this.Name = "frmUpdateStudent";
             this.Text = "frmUpdate";
             ((System.ComponentModel.ISupportInitialize)(this.erpUpdate)).EndInit();
             this.ResumeLayout(false);
@@ -260,10 +271,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.TextBox txtNamNhapHoc;
-        private System.Windows.Forms.TextBox txtChuyenNganh;
         private System.Windows.Forms.TextBox txtQueQuan;
         private System.Windows.Forms.TextBox txtMSSV;
         private System.Windows.Forms.TextBox txtKhoa;
         private System.Windows.Forms.ErrorProvider erpUpdate;
+        private System.Windows.Forms.ComboBox cmbChuyenNganh;
     }
 }

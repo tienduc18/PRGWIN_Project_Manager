@@ -15,10 +15,16 @@ namespace QuanLyDoAn.View
     public partial class FrmGiangVien : Form
     {
         private List<GiangVienViewModel> giangViens;
+        private List<GiangVien> gViens;
+        private List<ChuyenNganh> chuyenNganhs;
 
-        public FrmGiangVien()
+        public FrmGiangVien(ref List<GiangVien> dsGV, List<ChuyenNganh> dsCN)
         {
             InitializeComponent();
+
+            this.gViens = dsGV;
+            this.chuyenNganhs = dsCN;
+
             DoThuocTinh();
             DoDuLieu();
         }

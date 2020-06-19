@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyDoAn.Controller;
+using QuanLyDoAn.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,95 +14,86 @@ namespace QuanLyDoAn.View
 {
     public partial class FrmMain : Form
     {
-        private int childFormNumber = 0;
+        FrmSinhVien frmSinhVien;
+        FrmGiangVien frmGiangVien;
+        FrmQuanLyDeAn frmDeAn;
+        private List<SinhVien> sinhViens;
+        private List<ChuyenNganh> chuyenNganhs;
+        private List<GiangVien> giangViens;
+        private List<DeAn> deAns;
+        private List<MonHoc> monHocs;
+        private List<NhomSinhVien> nhomSinhViens;
+        private List<TienDo> tienDos;
+        private List<Type> types;
+
         public FrmMain()
         {
             InitializeComponent();
-        }
-
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
-            childForm.Show();
-        }
-
-        private void OpenFile(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
-        }
-
-        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }
-        }
-
-        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.Cascade);
-        }
-
-        private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileVertical);
-        }
-
-        private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileHorizontal);
-        }
-
-        private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.ArrangeIcons);
-        }
-
-        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form childForm in MdiChildren)
-            {
-                childForm.Close();
-            }
+            sinhViens = StudentController.GetListStudent();
+            giangViens = GiangVienController.GetListGiangVien();
         }
 
         private void MenuSinhVien_Click(object sender, EventArgs e)
         {
-            FrmSinhVien sv = new FrmSinhVien();
-            sv.MdiParent = this;
-            sv.Show();
+            if(this.frmSinhVien is null || this.frmSinhVien.IsDisposed)
+            {
+                this.frmSinhVien = new FrmSinhVien(ref sinhViens);
+                //this.frmSinhVien = new FrmSinhVien();
+                this.frmSinhVien.MdiParent = this;
+                this.frmSinhVien.Show();
+            }
+            else
+            {
+                this.frmSinhVien.Select();
+            }
         }
 
         private void MenuGiangVien_Click(object sender, EventArgs e)
         {
-            FrmGiangVien gv = new FrmGiangVien();
-            gv.MdiParent = this;
-
-            gv.Show();
+            if(this.frmGiangVien is null || this.frmGiangVien.IsDisposed)
+            {
+                this.frmGiangVien = new FrmGiangVien(ref giangViens, chuyenNganhs);
+                this.frmGiangVien.MdiParent = this;
+                this.frmGiangVien.Show();
+            }
+            else
+            {
+                this.frmGiangVien.Select();
+            }
         }
 
         private void MenuQuanLyDeTai_Click(object sender, EventArgs e)
         {
-            FrmQuanLyDeAn qlda = new FrmQuanLyDeAn();
-            qlda.MdiParent = this;
-            qlda.Show();
+            if(this.frmDeAn is null || this.frmDeAn.IsDisposed)
+            {
+                this.frmDeAn = new FrmQuanLyDeAn(ref deAns, chuyenNganhs, giangViens, monHocs, nhomSinhViens, types, tienDos);
+                this.frmDeAn.MdiParent = this;
+                this.frmDeAn.Show();
+            }
+            else
+            {
+                this.frmDeAn.Select();
+            }
+        }
+
+        private void FrmMain_MdiChildActivate(object sender, EventArgs e)
+        {
+            if(this.ActiveMdiChild == null)
+            {
+                return;
+            }
+
+            this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
+
+            if(this.ActiveMdiChild.Tag == null)
+            {
+                TabPage tp = new TabPage(this.ActiveMdiChild.Text);
+                tp.Tag = this.ActiveMdiChild;
+                //tp.Parent = this.tabMain;
+                //this.tabMain.SelectedTab = tp;
+                //this.ActiveMdiChild.Tag = tp;
+                //this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
+            }
         }
     }
 }

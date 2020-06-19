@@ -37,9 +37,9 @@ namespace QuanLyDoAn.View
                 erpAdd.SetError(dtpNgaySinh, "Yêu cầu phải đủ 18 tuổi trở lên!");
                 return;
             }
-            if (txtChuyenNganh.Text.Trim().Length <= 0)
+            if (cmbChuyenNganh.Text.Trim().Length <= 0)
             {
-                erpAdd.SetError(txtChuyenNganh, "Không được để trống chuyên ngành!");
+                erpAdd.SetError(cmbChuyenNganh, "Không được để trống chuyên ngành!");
                 return;
             }
             erpAdd.Clear();
@@ -50,7 +50,7 @@ namespace QuanLyDoAn.View
             student.NgaySinh = dtpNgaySinh.Value;
             student.QueQuan = txtQueQuan.Text;
             student.Khoa = txtKhoa.Text;
-            student.IDChuyenNganh = txtChuyenNganh.Text;
+            student.IDChuyenNganh = cmbChuyenNganh.Text;
             student.NamNhapHoc = txtNamNhapHoc.Text;
             if (StudentController.AddStudent(student) is false)
             {
@@ -62,8 +62,14 @@ namespace QuanLyDoAn.View
             dtpNgaySinh.ResetText();
             txtQueQuan.Clear();
             txtKhoa.Clear();
-            txtChuyenNganh.Clear();
-            txtNamNhapHoc.Clear();
-        }
+            txtNamNhapHoc.Clear();           
+            this.Close();
+        }        
+
+        //private void frmAddStudent_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    FrmSinhVien frmSinhVien = new FrmSinhVien();
+        //    frmSinhVien.Show();
+        //}
     }
 }

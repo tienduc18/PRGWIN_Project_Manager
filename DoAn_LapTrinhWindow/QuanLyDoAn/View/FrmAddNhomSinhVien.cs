@@ -84,6 +84,42 @@ namespace QuanLyDoAn.View
                 _context.NhomSinhViens.Add(nhom);
                 _context.SaveChanges();
             }
+
+            FrmAddDeAn frm = new FrmAddDeAn(this.txtIDNhom.Text);
+            frm.Show();
+            this.Close();
+        }
+
+        private void txtFindMSSV_TextChanged(object sender, EventArgs e)
+        {
+            lstViewThanhVienNhom.Items.Clear();
+            using (var _context = new DBLapTrinhWin())
+            {
+                string s = txtFindMSSV.Text;
+                var x = (from u in _context.SinhViens
+                         where u.Mssv.Contains(s)
+                         select u);
+                foreach(var i in x)
+                {
+                    string noiten = i.Mssv + ": " + i.HoTen;
+                    lstViewThanhVienNhom.Items.Add(noiten);
+                }
+                
+            }
+            if (txtFindMSSV.Text == string.Empty)
+                this.lstViewThanhVienNhom.Visible = false;
+            else
+                this.lstViewThanhVienNhom.Visible = true;
+        }
+
+        private void lstViewThanhVienNhom_DoubleClick(object sender, EventArgs e)
+        {
+            string[] tach;
+            tach = lstViewThanhVienNhom.SelectedItems[0].Text.Split(':');
+            string s = txtThanhVienNhom.Text + "," + tach[0]; ;
+            s = s.TrimStart(',');
+            txtThanhVienNhom.Text = s;
+            
         }
     }
 }

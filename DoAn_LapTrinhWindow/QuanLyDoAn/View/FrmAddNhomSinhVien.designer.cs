@@ -41,13 +41,17 @@
             this.txtIDNhom = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAddNhom = new System.Windows.Forms.Button();
+            this.lstViewThanhVienNhom = new System.Windows.Forms.ListView();
+            this.txtFindMSSV = new System.Windows.Forms.TextBox();
+            this.helptxtFindMSSV = new System.Windows.Forms.HelpProvider();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 40);
+            this.label1.Location = new System.Drawing.Point(22, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 22);
             this.label1.TabIndex = 0;
@@ -55,6 +59,7 @@
             // 
             // cbLoaiDoAn
             // 
+            this.cbLoaiDoAn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLoaiDoAn.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiDoAn.FormattingEnabled = true;
             this.cbLoaiDoAn.Items.AddRange(new object[] {
@@ -70,7 +75,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 111);
+            this.label2.Location = new System.Drawing.Point(22, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 22);
             this.label2.TabIndex = 2;
@@ -86,6 +91,7 @@
             // 
             // cbMaMonHoc
             // 
+            this.cbMaMonHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaMonHoc.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaMonHoc.FormattingEnabled = true;
             this.cbMaMonHoc.Location = new System.Drawing.Point(743, 37);
@@ -105,6 +111,7 @@
             // 
             // cbMaChuyenNganh
             // 
+            this.cbMaChuyenNganh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaChuyenNganh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaChuyenNganh.FormattingEnabled = true;
             this.cbMaChuyenNganh.Location = new System.Drawing.Point(743, 104);
@@ -124,18 +131,20 @@
             // 
             // txtThanhVienNhom
             // 
+            this.txtThanhVienNhom.AllowDrop = true;
             this.txtThanhVienNhom.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThanhVienNhom.Location = new System.Drawing.Point(199, 176);
+            this.txtThanhVienNhom.Location = new System.Drawing.Point(199, 167);
+            this.txtThanhVienNhom.Multiline = true;
             this.txtThanhVienNhom.Name = "txtThanhVienNhom";
-            this.txtThanhVienNhom.Size = new System.Drawing.Size(247, 29);
+            this.txtThanhVienNhom.ReadOnly = true;
+            this.txtThanhVienNhom.Size = new System.Drawing.Size(327, 72);
             this.txtThanhVienNhom.TabIndex = 9;
-            this.txtThanhVienNhom.Text = "(MSSV1,MSSV2,MSSV3,...)";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(42, 183);
+            this.label5.Location = new System.Drawing.Point(22, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(151, 22);
             this.label5.TabIndex = 8;
@@ -146,6 +155,7 @@
             this.txtIDNhom.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDNhom.Location = new System.Drawing.Point(743, 176);
             this.txtIDNhom.Name = "txtIDNhom";
+            this.txtIDNhom.ReadOnly = true;
             this.txtIDNhom.Size = new System.Drawing.Size(163, 29);
             this.txtIDNhom.TabIndex = 11;
             // 
@@ -170,11 +180,46 @@
             this.btnAddNhom.UseVisualStyleBackColor = true;
             this.btnAddNhom.Click += new System.EventHandler(this.btnAddNhom_Click);
             // 
+            // lstViewThanhVienNhom
+            // 
+            this.lstViewThanhVienNhom.AllowDrop = true;
+            this.lstViewThanhVienNhom.HideSelection = false;
+            this.lstViewThanhVienNhom.Location = new System.Drawing.Point(199, 342);
+            this.lstViewThanhVienNhom.Name = "lstViewThanhVienNhom";
+            this.lstViewThanhVienNhom.Size = new System.Drawing.Size(212, 123);
+            this.lstViewThanhVienNhom.TabIndex = 13;
+            this.lstViewThanhVienNhom.UseCompatibleStateImageBehavior = false;
+            this.lstViewThanhVienNhom.View = System.Windows.Forms.View.Tile;
+            this.lstViewThanhVienNhom.Visible = false;
+            this.lstViewThanhVienNhom.DoubleClick += new System.EventHandler(this.lstViewThanhVienNhom_DoubleClick);
+            // 
+            // txtFindMSSV
+            // 
+            this.txtFindMSSV.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFindMSSV.Location = new System.Drawing.Point(199, 278);
+            this.txtFindMSSV.Name = "txtFindMSSV";
+            this.txtFindMSSV.Size = new System.Drawing.Size(147, 29);
+            this.txtFindMSSV.TabIndex = 14;
+            this.txtFindMSSV.TextChanged += new System.EventHandler(this.txtFindMSSV_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(22, 281);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(164, 22);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Tìm kiếm sinh viên";
+            // 
             // FrmAddNhomSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 450);
+            this.ClientSize = new System.Drawing.Size(938, 523);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtFindMSSV);
+            this.Controls.Add(this.lstViewThanhVienNhom);
             this.Controls.Add(this.btnAddNhom);
             this.Controls.Add(this.txtIDNhom);
             this.Controls.Add(this.label6);
@@ -211,5 +256,9 @@
         private System.Windows.Forms.TextBox txtIDNhom;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAddNhom;
+        private System.Windows.Forms.ListView lstViewThanhVienNhom;
+        private System.Windows.Forms.TextBox txtFindMSSV;
+        private System.Windows.Forms.HelpProvider helptxtFindMSSV;
+        private System.Windows.Forms.Label label7;
     }
 }

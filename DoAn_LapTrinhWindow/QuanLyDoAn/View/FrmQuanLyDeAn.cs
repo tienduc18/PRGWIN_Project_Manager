@@ -13,28 +13,26 @@ namespace QuanLyDoAn.View
 {
     public partial class FrmQuanLyDeAn : Form
     {
-       
-        public FrmQuanLyDeAn()
+        private List<ChuyenNganh> chuyenNganhs;
+        private List<GiangVien> giangViens;
+        private List<DeAn> deAns;
+        private List<MonHoc> monHocs;
+        private List<NhomSinhVien> nhomSinhViens;
+        private List<TienDo> tienDos;
+        private List<Type> types;
+        public FrmQuanLyDeAn(ref List<DeAn> dsDA, List<ChuyenNganh> dsCN, List<GiangVien> dsGV, List<MonHoc> dsMH, 
+            List<NhomSinhVien> dsNhomSV, List<Type> dsType, List<TienDo> dsTD)
         {
             InitializeComponent();
 
-            //this.cbType.Text = "";
-            //this.cIDDeAn.DataPropertyName = nameof(DeAn.IDDeAn);
-            //this.cTenDeAn.DataPropertyName = nameof(DeAn.TenDeAn);
-            //this.cTenNhom.DataPropertyName = nameof(DeAn.NhomSinhVien.TenNhom);
-            //this.cType.DataPropertyName = nameof(DeAn.Type1.LoaiDeAn);
-            //this.cMoTa.DataPropertyName = nameof(DeAn.MoTa);
-            //this.cMonHoc.DataPropertyName = nameof(DeAn.MonHoc1.TenMonHoc);
-            //this.cChuyenNganh.DataPropertyName = nameof(DeAn.ChuyenNganh1.TenChuyenNganh);
+            this.deAns = dsDA;
+            this.chuyenNganhs = dsCN;
+            this.giangViens = dsGV;
+            this.monHocs = dsMH;
+            this.nhomSinhViens = dsNhomSV;
+            this.types = dsType;
+            this.tienDos = dsTD;
 
-            ////this.cCacThanhVien.DataPropertyName = nameof(List<string>);
-
-            //this.cThanhVien.DataPropertyName = nameof(DeAn.NhomSinhVien.ThanhVien);
-            //this.cGVHD.DataPropertyName = nameof(DeAn.GiangVien.HoTen);
-            //this.cDateStart.DataPropertyName = nameof(DeAn.DateStart);
-            //this.cDateEnd.DataPropertyName = nameof(DeAn.DateEnd);
-            //this.cTienDo.DataPropertyName = nameof(DeAn.TienDo);
-            //this.cDiem.DataPropertyName = nameof(DeAn.Diem);
             this.cbType.Text = "";
             this.cIDDeAn.DataPropertyName = nameof(DanhSachDeAn.IDDeAn);
             this.cTenDeAn.DataPropertyName = nameof(DanhSachDeAn.TenDeAn);
@@ -225,7 +223,7 @@ namespace QuanLyDoAn.View
 
         private void btnDangKyDeAn_Click(object sender, EventArgs e)
         {
-            FrmAddDeAn frmDeAn = new FrmAddDeAn();
+            FrmAddDeAn frmDeAn = new FrmAddDeAn("");
             frmDeAn.Show();
         }
 
@@ -236,7 +234,12 @@ namespace QuanLyDoAn.View
             for(int i=0;i< data.Rows.Count;i++)
             
             {
-                (data.Rows[i].Cells[0] as DataGridViewComboBoxCell).Items.Add(source[i].DanhSachThanhVien[0]);
+                 for (int j=0;j<source[i].DanhSachThanhVien.Count;j++)
+                    (data.Rows[i].Cells[0] as DataGridViewComboBoxCell).Items.Add(source[i].DanhSachThanhVien[j]);
+                
+                //(data.Rows[i].Cells[0] as DataGridViewComboBoxCell).Items.Add(source[i].DanhSachThanhVien);
+
+
             }
             
             

@@ -52,5 +52,26 @@ namespace QuanLyDoAn.Controller
                 return result;
             }
         }
+        public static List<GiangVien> GetListGiangVien()
+        {
+            using (var _context = new DBLapTrinhWin())
+            {
+                var task = (from t in _context.GiangViens.Include("ChuyenNganh1").AsEnumerable()
+                            select t)
+                            .Select(x => new GiangVien
+                            {
+                                MSGV = x.MSGV,
+                                HoTen = x.HoTen,
+                                NgaySinh = x.NgaySinh,
+                                QueQuan = x.QueQuan,
+                                GioiTinh = x.GioiTinh,
+                                Khoa = x.Khoa,
+                                ChuyenNganh = x.ChuyenNganh,
+                                ChuyenNganh1 = x.ChuyenNganh1
+                            }).ToList();
+
+                return task;
+            }
+        }
     }
 }
