@@ -16,7 +16,7 @@ namespace QuanLyDoAn.Controller
             using (var _context = new DBLapTrinhWin())
             {
                 var dbStudent = (from s in _context.SinhViens
-                                where s.Mssv == studentID
+                                where s.Mssv == studentID && s.DaXoa == false
                                 select s).FirstOrDefault();
                 return dbStudent;
             }
@@ -36,6 +36,21 @@ namespace QuanLyDoAn.Controller
             {
                 _context.SinhViens.AddOrUpdate(student);                
                 _context.SaveChanges();               
+                return true;
+            }
+        }
+        public static bool DeleteStudent(string studentID)
+        {
+            using (var _context = new DBLapTrinhWin())
+            {
+                var dbStudent = (from s in _context.SinhViens
+                                where s.Mssv == studentID && s.DaXoa == false
+                                select s).FirstOrDefault();
+                if (dbStudent == null)
+                    return false;
+                dbStudent.DaXoa = true;
+                _context.SinhViens.AddOrUpdate(dbStudent);
+                _context.SaveChanges();
                 return true;
             }
         }
@@ -66,6 +81,7 @@ namespace QuanLyDoAn.Controller
             using (var _context = new DBLapTrinhWin())
             {
                 var task = (from t in _context.SinhViens.Include("ChuyenNganh").AsEnumerable()
+                            where t.DaXoa == false
                             select t)
                             .Select(x => new SinhVien
                             {
@@ -77,6 +93,7 @@ namespace QuanLyDoAn.Controller
                                 Khoa = x.Khoa,
                                 IDChuyenNganh = x.IDChuyenNganh,
                                 NamNhapHoc = x.NamNhapHoc,
+                                
                                 ChuyenNganh = x.ChuyenNganh
                             }).ToList();
 

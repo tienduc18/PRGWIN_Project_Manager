@@ -43,9 +43,12 @@ namespace QuanLyDoAn.View
                 TienDoBaoCao present = new TienDoBaoCao();
                 present.SoBuoi = x.SoBuoi;
                 txtSoBuoi.Text = (present.SoBuoi).ToString();
-                for (int i = 1; i <= present.SoBuoi; i++)
+                if(cbSoBuoi.Items.Count <= 0)
                 {
-                    cbSoBuoi.Items.Add(i);
+                    for (int i = 1; i <= present.SoBuoi; i++)
+                    {
+                        cbSoBuoi.Items.Add(i);
+                    }
                 }
                 
 

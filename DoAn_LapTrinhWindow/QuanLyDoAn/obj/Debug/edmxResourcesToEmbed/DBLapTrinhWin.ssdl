@@ -36,6 +36,7 @@
     <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
     <Property Name="Khoa" Type="nvarchar" MaxLength="50" />
     <Property Name="ChuyenNganh" Type="char" MaxLength="4" />
+    <Property Name="DaXoa" Type="bit" />
   </EntityType>
   <EntityType Name="MonHoc">
     <Key>
@@ -66,6 +67,7 @@
     <Property Name="Khoa" Type="nvarchar" MaxLength="30" />
     <Property Name="IDChuyenNganh" Type="char" MaxLength="4" />
     <Property Name="NamNhapHoc" Type="char" MaxLength="4" />
+    <Property Name="DaXoa" Type="bit" />
   </EntityType>
   <EntityType Name="TienDo">
     <Key>

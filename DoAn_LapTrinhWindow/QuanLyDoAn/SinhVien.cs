@@ -22,6 +22,7 @@ namespace QuanLyDoAn
         public string Khoa { get; set; }
         public string IDChuyenNganh { get; set; }
         public string NamNhapHoc { get; set; }
+        public Nullable<bool> DaXoa { get; set; }
     
         public virtual ChuyenNganh ChuyenNganh { get; set; }
     }

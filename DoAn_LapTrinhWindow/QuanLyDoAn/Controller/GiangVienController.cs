@@ -26,6 +26,10 @@ namespace QuanLyDoAn.Controller
         {
             using (var _context = new DBLapTrinhWin())
             {
+                var dbStudent = (from s in _context.GiangViens
+                                 where s.DaXoa == false
+                                 select s);
+
                 var model = _context.GiangViens;
 
                 if(!string.IsNullOrEmpty(searchString))
@@ -38,21 +42,41 @@ namespace QuanLyDoAn.Controller
 
                 }
 
-                var result = model.Select(x => new GiangVienViewModel
+                //var result = model.Select(x => new GiangVienViewModel
+                List<GiangVienViewModel> gv = new List<GiangVienViewModel>();
+                foreach(var x in dbStudent)
                 {
-                    MSGV = x.MSGV,
-                    HoTen = x.HoTen,
-                    NgaySinh = x.NgaySinh.HasValue ? x.NgaySinh.Value : DateTime.MinValue,
-                    GioiTinh = x.GioiTinh,
-                    Khoa = x.Khoa,
-                    QueQuan = x.QueQuan,
-                    ChuyenNganh = x.ChuyenNganh1.TenChuyenNganh
-                }).ToList();
+                    GiangVienViewModel gVien = new GiangVienViewModel();
+                    gVien.MSGV = x.MSGV;
+                    gVien.HoTen = x.HoTen;
+                    gVien.NgaySinh = x.NgaySinh.HasValue ? x.NgaySinh.Value : DateTime.MinValue;
+                    gVien.GioiTinh = x.GioiTinh;
+                    gVien.Khoa = x.Khoa;
+                    gVien.QueQuan = x.QueQuan;
+                    gVien.ChuyenNganh = x.ChuyenNganh1.TenChuyenNganh;
+                    gv.Add(gVien);
+                    
+                }
 
-                return result;
+                return gv;
             }
         }
 
+        public static bool DeleteGiangVien(string ID)
+        {
+            using (var _context = new DBLapTrinhWin())
+            {
+                var dbGiangVien = (from s in _context.GiangViens
+                                 where s.MSGV == ID && s.DaXoa == false
+                                 select s).FirstOrDefault();
+                if (dbGiangVien == null)
+                    return false;
+                dbGiangVien.DaXoa = true;
+                _context.GiangViens.AddOrUpdate(dbGiangVien);
+                _context.SaveChanges();
+                return true;
+            }
+        }
         public static List<GiangVien> GetListGiangVien()
         {
             using (var _context = new DBLapTrinhWin())

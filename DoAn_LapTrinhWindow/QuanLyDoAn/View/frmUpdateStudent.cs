@@ -19,7 +19,14 @@ namespace QuanLyDoAn.View
             txtMSSV.Text = student.Mssv;
             txtHoTen.Text = student.HoTen;
             txtKhoa.Text = student.Khoa;
-            dtpNgaySinh.Value = student.NgaySinh.GetValueOrDefault();
+            try
+            {
+                dtpNgaySinh.Value = student.NgaySinh.GetValueOrDefault();
+            }
+            catch
+            {
+                dtpNgaySinh.Value = DateTime.Now;
+            }
             cmbGioiTinh.Text = student.GioiTinh;
             cmbChuyenNganh.Text = student.IDChuyenNganh;
             txtQueQuan.Text = student.QueQuan;
@@ -58,6 +65,7 @@ namespace QuanLyDoAn.View
             tempStudent.Khoa = txtKhoa.Text;
             tempStudent.IDChuyenNganh = cmbChuyenNganh.Text;
             tempStudent.NamNhapHoc = txtNamNhapHoc.Text;
+            tempStudent.DaXoa = false;
             if (StudentController.UpdateStudent(tempStudent) is false)
             {
                 MessageBox.Show("Không thể thêm sinh viên!", "Cảnh báo!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);

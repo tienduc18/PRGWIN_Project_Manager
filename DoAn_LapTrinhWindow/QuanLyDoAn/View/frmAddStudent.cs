@@ -52,6 +52,7 @@ namespace QuanLyDoAn.View
             student.Khoa = txtKhoa.Text;
             student.IDChuyenNganh = cmbChuyenNganh.Text;
             student.NamNhapHoc = txtNamNhapHoc.Text;
+            student.DaXoa = false;
             if (StudentController.AddStudent(student) is false)
             {
                 MessageBox.Show("Không thể thêm sinh viên!", "Cảnh báo!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);

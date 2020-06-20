@@ -47,6 +47,7 @@
     <Property Name="ChuyenNganh" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
     <NavigationProperty Name="ChuyenNganh1" Relationship="Self.FK_GiangVien_ChuyenNganh" FromRole="GiangVien" ToRole="ChuyenNganh" />
     <NavigationProperty Name="DeAns" Relationship="Self.FK_DeAn_GiangVien" FromRole="GiangVien" ToRole="DeAn" />
+    <Property Name="DaXoa" Type="Boolean" />
   </EntityType>
   <EntityType Name="MonHoc">
     <Key>
@@ -80,6 +81,7 @@
     <Property Name="IDChuyenNganh" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
     <Property Name="NamNhapHoc" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
     <NavigationProperty Name="ChuyenNganh" Relationship="Self.FK_SinhVien_ChuyenNganh" FromRole="SinhVien" ToRole="ChuyenNganh" />
+    <Property Name="DaXoa" Type="Boolean" />
   </EntityType>
   <EntityType Name="TienDo">
     <Key>

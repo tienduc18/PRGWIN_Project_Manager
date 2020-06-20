@@ -27,6 +27,7 @@ namespace QuanLyDoAn
         public string GioiTinh { get; set; }
         public string Khoa { get; set; }
         public string ChuyenNganh { get; set; }
+        public Nullable<bool> DaXoa { get; set; }
     
         public virtual ChuyenNganh ChuyenNganh1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

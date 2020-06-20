@@ -40,6 +40,8 @@ namespace QuanLyDoAn.View
             this.cQueQuan.DataPropertyName = nameof(i.QueQuan);
             this.cKhoa.DataPropertyName = nameof(i.Khoa);
             this.cChuyenNganh.DataPropertyName = nameof(i.ChuyenNganh);
+            cKhoa.Visible = false;
+            dtgThongTinGiangVien.AutoGenerateColumns = false;
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
@@ -51,7 +53,7 @@ namespace QuanLyDoAn.View
                 string quequan = txtQueQuan.Text;
                 string chuyennganh = txtChuyenNganh.Text;
                 var x = from u in _context.GiangViens
-                        where u.MSGV.Contains(msgv) && u.HoTen.Contains(name) && u.GioiTinh.Contains(gioitinh) && u.QueQuan.Contains(quequan) && u.ChuyenNganh.Contains(chuyennganh)
+                        where u.MSGV.Contains(msgv) && u.HoTen.Contains(name) && u.GioiTinh.Contains(gioitinh) && u.QueQuan.Contains(quequan) && u.ChuyenNganh.Contains(chuyennganh) && u.DaXoa == false
 
                         select new { u.MSGV, u.HoTen, u.NgaySinh, u.GioiTinh, u.QueQuan, u.ChuyenNganh1.TenChuyenNganh };
                 
@@ -99,7 +101,20 @@ namespace QuanLyDoAn.View
 
             if(dr == DialogResult.Yes)
             {
-                
+                string id = dtgThongTinGiangVien.CurrentRow.Cells[0].Value.ToString();
+                if(GiangVienController.DeleteGiangVien(id) == false)
+                {
+                    MessageBox.Show("Không thể xoá giảng viên này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                //string id = dtgThongTinSinhVien.CurrentRow.Cells[0].Value.ToString();
+                //if (StudentController.DeleteStudent(id) == false)
+                //{
+                //    MessageBox.Show("Sinh viên không tồn tại!", "Lỗi", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                //
+                //dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
+                //dtgThongTinGiangVien.DataSource = GiangVienController.GetAllGiangVien("");
+                DoDuLieu();
             }
         }
     }

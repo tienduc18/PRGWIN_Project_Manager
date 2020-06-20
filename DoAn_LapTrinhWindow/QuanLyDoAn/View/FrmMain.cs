@@ -88,10 +88,23 @@ namespace QuanLyDoAn.View
             {
                 TabPage tp = new TabPage(this.ActiveMdiChild.Text);
                 tp.Tag = this.ActiveMdiChild;
-                //tp.Parent = this.tabMain;
-                //this.tabMain.SelectedTab = tp;
-                //this.ActiveMdiChild.Tag = tp;
-                //this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
+                tp.Parent = this.tctTabMain;
+                this.tctTabMain.SelectedTab = tp;
+                this.ActiveMdiChild.Tag = tp;
+                this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
+            }
+        }
+
+        private void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((sender as Form).Tag as TabPage).Dispose();
+        }
+
+        private void tctTabMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.tctTabMain.SelectedTab != null && this.tctTabMain.SelectedTab.Tag != null)
+            {
+                (this.tctTabMain.SelectedTab.Tag as Form).Select();
             }
         }
     }

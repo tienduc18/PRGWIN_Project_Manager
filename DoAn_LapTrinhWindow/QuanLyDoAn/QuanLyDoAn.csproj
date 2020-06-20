@@ -148,12 +148,6 @@
     <Compile Include="View\FrmQuanLyDeAn.designer.cs">
       <DependentUpon>FrmQuanLyDeAn.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmQuanLyDoAn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FrmQuanLyDoAn.Designer.cs">
-      <DependentUpon>FrmQuanLyDoAn.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmTestDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,9 +194,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmQuanLyDeAn.resx">
       <DependentUpon>FrmQuanLyDeAn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmQuanLyDoAn.resx">
-      <DependentUpon>FrmQuanLyDoAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTestDB.resx">
       <DependentUpon>FrmTestDB.cs</DependentUpon>

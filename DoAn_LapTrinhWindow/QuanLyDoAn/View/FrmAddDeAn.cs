@@ -91,8 +91,10 @@ namespace QuanLyDoAn.View
         private void btnDangKyNhom_Click(object sender, EventArgs e)
         {
             FrmAddNhomSinhVien frmNhom = new FrmAddNhomSinhVien();
+            
             frmNhom.Show();
             this.Close();
+
         }
 
         private void txtGVHD_TextChanged(object sender, EventArgs e)
