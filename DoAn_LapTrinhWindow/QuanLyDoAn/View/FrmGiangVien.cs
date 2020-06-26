@@ -14,34 +14,11 @@ namespace QuanLyDoAn.View
 {
     public partial class FrmGiangVien : Form
     {
-        private List<GiangVienViewModel> giangViens;
-        private List<GiangVien> gViens;
-        private List<ChuyenNganh> chuyenNganhs;
-
-        public FrmGiangVien(ref List<GiangVien> dsGV, List<ChuyenNganh> dsCN)
+        public FrmGiangVien()
         {
             InitializeComponent();
 
-            this.gViens = dsGV;
-            this.chuyenNganhs = dsCN;
-
-            DoThuocTinh();
             DoDuLieu();
-        }
-
-        private void DoThuocTinh()
-        {
-            var i = new GiangVienViewModel();
-
-            this.cMSGV.DataPropertyName = nameof(i.MSGV);
-            this.cHoTen.DataPropertyName = nameof(i.HoTen);
-            this.cNgaySinh.DataPropertyName = nameof(i.NgaySinh);
-            this.cGioiTinh.DataPropertyName = nameof(i.GioiTinh);
-            this.cQueQuan.DataPropertyName = nameof(i.QueQuan);
-            this.cKhoa.DataPropertyName = nameof(i.Khoa);
-            this.cChuyenNganh.DataPropertyName = nameof(i.ChuyenNganh);
-            cKhoa.Visible = false;
-            dtgThongTinGiangVien.AutoGenerateColumns = false;
         }
         private void btnFind_Click(object sender, EventArgs e)
         {
@@ -63,11 +40,9 @@ namespace QuanLyDoAn.View
 
         private void DoDuLieu()
         {
-            giangViens = GiangVienController.GetAllGiangVien("");
-            dtgThongTinGiangVien.DataSource = giangViens;
+            dtgThongTinGiangVien.DataSource = GiangVienController.GetAllGiangVien("");
             dtgThongTinGiangVien.Refresh();
         }
-
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -106,14 +81,6 @@ namespace QuanLyDoAn.View
                 {
                     MessageBox.Show("Không thể xoá giảng viên này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                //string id = dtgThongTinSinhVien.CurrentRow.Cells[0].Value.ToString();
-                //if (StudentController.DeleteStudent(id) == false)
-                //{
-                //    MessageBox.Show("Sinh viên không tồn tại!", "Lỗi", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                //
-                //dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
-                //dtgThongTinGiangVien.DataSource = GiangVienController.GetAllGiangVien("");
                 DoDuLieu();
             }
         }

@@ -8,48 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyDoAn.Controller;
+using QuanLyDoAn.ViewModel;
 
 namespace QuanLyDoAn.View
 {
     public partial class FrmQuanLyDeAn : Form
     {
-        private List<ChuyenNganh> chuyenNganhs;
-        private List<GiangVien> giangViens;
-        private List<DeAn> deAns;
-        private List<MonHoc> monHocs;
-        private List<NhomSinhVien> nhomSinhViens;
-        private List<TienDo> tienDos;
-        private List<Type> types;
-        public FrmQuanLyDeAn(ref List<DeAn> dsDA, List<ChuyenNganh> dsCN, List<GiangVien> dsGV, List<MonHoc> dsMH, 
-            List<NhomSinhVien> dsNhomSV, List<Type> dsType, List<TienDo> dsTD)
+        public FrmQuanLyDeAn()
         {
             InitializeComponent();
 
-            this.deAns = dsDA;
-            this.chuyenNganhs = dsCN;
-            this.giangViens = dsGV;
-            this.monHocs = dsMH;
-            this.nhomSinhViens = dsNhomSV;
-            this.types = dsType;
-            this.tienDos = dsTD;
-
             this.cbType.Text = "";
-            this.cIDDeAn.DataPropertyName = nameof(DanhSachDeAn.IDDeAn);
-            this.cTenDeAn.DataPropertyName = nameof(DanhSachDeAn.TenDeAn);
-            this.cTenNhom.DataPropertyName = nameof(DanhSachDeAn.TenNhom);
-            this.cType.DataPropertyName = nameof(DanhSachDeAn.LoaiDeAn);
-            this.cMoTa.DataPropertyName = nameof(DanhSachDeAn.MoTa);
-            this.cMonHoc.DataPropertyName = nameof(DanhSachDeAn.TenMonHoc);
-            this.cChuyenNganh.DataPropertyName = nameof(DanhSachDeAn.TenChuyenNganh);
+            this.cIDDeAn.DataPropertyName = nameof(DeAnViewModel.IDDeAn);
+            this.cTenDeAn.DataPropertyName = nameof(DeAnViewModel.TenDeAn);
+            this.cTenNhom.DataPropertyName = nameof(DeAnViewModel.TenNhom);
+            this.cType.DataPropertyName = nameof(DeAnViewModel.LoaiDeAn);
+            this.cMoTa.DataPropertyName = nameof(DeAnViewModel.MoTa);
+            this.cMonHoc.DataPropertyName = nameof(DeAnViewModel.TenMonHoc);
+            this.cChuyenNganh.DataPropertyName = nameof(DeAnViewModel.TenChuyenNganh);
 
-           //this.cCacThanhVien.DataPropertyName = nameof(DanhSachDeAn.DanhSachThanhVien);
+            //this.cCacThanhVien.DataPropertyName = nameof(DanhSachDeAn.DanhSachThanhVien);
 
-            this.cThanhVien.DataPropertyName = nameof(DanhSachDeAn.StringThanhVien);
-            this.cGVHD.DataPropertyName = nameof(DanhSachDeAn.HoTenGV);
-            this.cDateStart.DataPropertyName = nameof(DanhSachDeAn.DateStart);
-            this.cDateEnd.DataPropertyName = nameof(DanhSachDeAn.DateEnd);
-            this.cTienDo.DataPropertyName = nameof(DanhSachDeAn.TienDo);
-            this.cDiem.DataPropertyName = nameof(DanhSachDeAn.Diem);
+            this.cThanhVien.DataPropertyName = nameof(DeAnViewModel.StringThanhVien);
+            this.cGVHD.DataPropertyName = nameof(DeAnViewModel.HoTenGV);
+            this.cDateStart.DataPropertyName = nameof(DeAnViewModel.DateStart);
+            this.cDateEnd.DataPropertyName = nameof(DeAnViewModel.DateEnd);
+            this.cTienDo.DataPropertyName = nameof(DeAnViewModel.TienDo);
+            this.cDiem.DataPropertyName = nameof(DeAnViewModel.Diem);
             DoDuLieu();
             
         }
@@ -100,10 +85,10 @@ namespace QuanLyDoAn.View
                             u.Diem
                         };
                 
-                List<DanhSachDeAn> y = new List<DanhSachDeAn>();
+                List<DeAnViewModel> y = new List<DeAnViewModel>();
                 foreach (var  i in x)
                 {
-                    DanhSachDeAn k = new DanhSachDeAn();
+                    DeAnViewModel k = new DeAnViewModel();
                     k.IDDeAn = i.IDDeAn;
                     k.TenDeAn = i.TenDeAn;
                     
@@ -116,7 +101,7 @@ namespace QuanLyDoAn.View
                     k.HoTenGV = i.HoTen;
                     k.DateStart = i.DateStart;
                     k.DateEnd = i.DateEnd;
-                    k.TienDo = (i.TienDo * 100).ToString() + "%"; 
+                    k.TienDo = i.TienDo.HasValue ? (i.TienDo * 100).ToString() + "%" : "0%";
                     k.Diem = i.Diem;
                     k.DanhSachThanhVien = NhomController.GetDanhSachThanhVien(k.StringThanhVien);
                     
@@ -140,26 +125,34 @@ namespace QuanLyDoAn.View
 
         private void btnTienDo_Click(object sender, EventArgs e)
         {
+            if(dtgDeAn.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Bạn phải chọn đề án.","Thông báo!", MessageBoxButtons.OK);
+                return;
+            }
+
             string s = this.dtgDeAn.SelectedRows[0].Cells[1].Value.ToString();
             FrmTienDo k = new FrmTienDo(s);
-            //this.Visible = false;
             k.Show();
             DoDuLieu();
-            //this.Visible = true;
-
         }
 
         private void btnDangKyDeAn_Click(object sender, EventArgs e)
         {
             FrmAddDeAn frmDeAn = new FrmAddDeAn("");
             frmDeAn.Show();
+            frmDeAn.AddDeAnThanhCong += FrmDeAn_AddDeAnThanhCong;
+        }
+
+        private void FrmDeAn_AddDeAnThanhCong(object sender, AddDeAnThanhCongEventArgs e)
+        {
             DoDuLieu();
         }
 
         private void dtgDeAn_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             DataGridView data = sender as DataGridView;
-            List<DanhSachDeAn> source =(sender as DataGridView).DataSource as List<DanhSachDeAn>;
+            List<DeAnViewModel> source =(sender as DataGridView).DataSource as List<DeAnViewModel>;
             for(int i=0;i< data.Rows.Count;i++)
             
             {
@@ -193,54 +186,33 @@ namespace QuanLyDoAn.View
                 type = "2";
             using (var _context = new DBLapTrinhWin())
             {
-                var x = from u in _context.DeAns
-                        where u.IDDeAn.Contains(IDdean) && u.TenDeAn.Contains(tendean) && u.Type.Contains(type)
-                        && u.IDNhomSV.Contains(idnhom) && u.GiangVien.HoTen.Contains(gvhd) && u.IDDeAn.Contains(idchuyennganh)
-                        && u.IDDeAn.Contains(idmonhoc)
-                        select new
-                        {
-                            u.IDDeAn,
-                            u.TenDeAn,
-                            u.NhomSinhVien.TenNhom,
-                            u.MoTa,
-                            u.MonHoc1.TenMonHoc,
-                            u.Type1.LoaiDeAn,
-                            u.TienDo1.HoanThanh,
-                            u.NhomSinhVien.ThanhVien,
-                            u.ChuyenNganh1.TenChuyenNganh,
-                            u.GiangVien.HoTen,
-                            u.DateStart,
-                            u.DateEnd,
-                            u.TienDo,
-                            u.Diem,
-                            u.TienDo1.SoBuoi
-                        };
+                var x = (from u in _context.DeAns
+                         where u.IDDeAn.Contains(IDdean) && u.TenDeAn.Contains(tendean) && u.Type.Contains(type)
+                         && u.IDNhomSV.Contains(idnhom) && u.GiangVien.HoTen.Contains(gvhd) && u.IDDeAn.Contains(idchuyennganh)
+                         && u.IDDeAn.Contains(idmonhoc)
+                         select new DeAnViewModel
+                         {
+                             IDDeAn = u.IDDeAn,
+                             TenDeAn = u.TenDeAn,
+                             TenNhom = u.NhomSinhVien.TenNhom,
+                             MoTa = u.MoTa,
+                             TenMonHoc = u.MonHoc1.TenMonHoc,
+                             LoaiDeAn = u.Type1.LoaiDeAn,
+                             StringThanhVien = u.NhomSinhVien.ThanhVien,
+                             TenChuyenNganh = u.ChuyenNganh1.TenChuyenNganh,
+                             HoTenGV = u.GiangVien.HoTen,
+                             DateStart = u.DateStart,
+                             DateEnd = u.DateEnd,
+                             Diem = u.Diem,
+                             TienDo = u.TienDo.HasValue ? (u.TienDo * 100).ToString() + "%" : "0%"
+                         }).ToList();
 
-                List<DanhSachDeAn> y = new List<DanhSachDeAn>();
-                foreach (var i in x)
+                foreach(var deAn in x)
                 {
-                    DanhSachDeAn k = new DanhSachDeAn();
-                    k.IDDeAn = i.IDDeAn;
-                    k.TenDeAn = i.TenDeAn;
-
-                    k.TenNhom = i.TenNhom;
-                    k.MoTa = i.MoTa;
-                    k.TenMonHoc = i.TenMonHoc;
-                    k.LoaiDeAn = i.LoaiDeAn;
-                    k.StringThanhVien = i.ThanhVien;
-                    k.TenChuyenNganh = i.TenChuyenNganh;
-                    k.HoTenGV = i.HoTen;
-                    k.DateStart = i.DateStart;
-                    k.DateEnd = i.DateEnd;
-                    k.TienDo = (i.TienDo * 100).ToString() + "%";
-                    k.Diem = i.Diem;
-                    k.DanhSachThanhVien = NhomController.GetDanhSachThanhVien(k.StringThanhVien);
-
-                    y.Add(k);
+                    deAn.DanhSachThanhVien = NhomController.GetDanhSachThanhVien(deAn.StringThanhVien);
                 }
 
-                this.dtgDeAn.DataSource = y;
-
+                this.dtgDeAn.DataSource = x;
 
 
 

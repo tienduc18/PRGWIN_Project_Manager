@@ -18,7 +18,6 @@ namespace QuanLyDoAn.View
             InitializeComponent();
             txtMSSV.Text = student.Mssv;
             txtHoTen.Text = student.HoTen;
-            txtKhoa.Text = student.Khoa;
             try
             {
                 dtpNgaySinh.Value = student.NgaySinh.GetValueOrDefault();
@@ -62,7 +61,6 @@ namespace QuanLyDoAn.View
             tempStudent.GioiTinh = cmbGioiTinh.SelectedItem.ToString();
             tempStudent.NgaySinh = dtpNgaySinh.Value;
             tempStudent.QueQuan = txtQueQuan.Text;
-            tempStudent.Khoa = txtKhoa.Text;
             tempStudent.IDChuyenNganh = cmbChuyenNganh.Text;
             tempStudent.NamNhapHoc = txtNamNhapHoc.Text;
             tempStudent.DaXoa = false;
@@ -75,8 +73,6 @@ namespace QuanLyDoAn.View
             cmbGioiTinh.Text = cmbGioiTinh.Items[0].ToString();
             dtpNgaySinh.ResetText();
             txtQueQuan.Clear();
-            txtKhoa.Clear();
-            //cmbChuyenNganh.Clear();
             txtNamNhapHoc.Clear();
             this.Close();
         }

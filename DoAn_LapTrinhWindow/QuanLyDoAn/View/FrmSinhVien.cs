@@ -14,24 +14,25 @@ namespace QuanLyDoAn.View
 {
     public partial class FrmSinhVien : Form
     {
-        private List<SinhVien> sinhViens;
-        public FrmSinhVien(ref List<SinhVien> dsSV)
+        public FrmSinhVien()
         {
             InitializeComponent();
+            dtgThongTinSinhVien.AutoGenerateColumns = false;
 
-            this.sinhViens = dsSV;
             this.cMSSV.DataPropertyName = nameof(SinhVienViewModel.Mssv);
             this.cHoTen.DataPropertyName = nameof(SinhVienViewModel.HoTen);
             this.cNgaySinh.DataPropertyName = nameof(SinhVienViewModel.NgaySinh);
-            this.cGioiTinh.DataPropertyName = nameof(SinhVienViewModel.GioiTinh);
-
             this.cQueQuan.DataPropertyName = nameof(SinhVienViewModel.QueQuan);
-            this.cKhoa.DataPropertyName = nameof(SinhVienViewModel.Khoa);
-            this.cChuyenNganh.DataPropertyName = nameof(SinhVien.IDChuyenNganh);
+            this.cGioiTinh.DataPropertyName = nameof(SinhVienViewModel.GioiTinh);
+            this.cChuyenNganh.DataPropertyName = nameof(SinhVienViewModel.ChuyenNganh);
             this.cNamNhapHoc.DataPropertyName = nameof(SinhVienViewModel.NamNhapHoc);
-            cKhoa.Visible = false;
-            dtgThongTinSinhVien.AutoGenerateColumns = false;
+
+            DoDuLieu();
+        }
+        private void DoDuLieu()
+        {
             dtgThongTinSinhVien.DataSource = StudentController.GetListStudent();
+            dtgThongTinSinhVien.Refresh();
         }
 
         private void btnFind_Click(object sender, EventArgs e)

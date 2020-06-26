@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QuanLyDeTaiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QuanLyDeTaiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChuyenNganh">
           <Key>
             <PropertyRef Name="IDChuyenNganh" />
@@ -229,7 +229,8 @@
             <End Role="TienDo" EntitySet="TienDo" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyDeTaiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -278,9 +279,9 @@
           <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="Khoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ChuyenNganh" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="DaXoa" Type="Boolean" />
           <NavigationProperty Name="ChuyenNganh1" Relationship="Self.FK_GiangVien_ChuyenNganh" FromRole="GiangVien" ToRole="ChuyenNganh" />
           <NavigationProperty Name="DeAns" Relationship="Self.FK_DeAn_GiangVien" FromRole="GiangVien" ToRole="DeAn" />
-          <Property Name="DaXoa" Type="Boolean" />
         </EntityType>
         <EntityType Name="MonHoc">
           <Key>
@@ -313,8 +314,8 @@
           <Property Name="Khoa" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="IDChuyenNganh" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
           <Property Name="NamNhapHoc" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="ChuyenNganh" Relationship="Self.FK_SinhVien_ChuyenNganh" FromRole="SinhVien" ToRole="ChuyenNganh" />
           <Property Name="DaXoa" Type="Boolean" />
+          <NavigationProperty Name="ChuyenNganh" Relationship="Self.FK_SinhVien_ChuyenNganh" FromRole="SinhVien" ToRole="ChuyenNganh" />
         </EntityType>
         <EntityType Name="TienDo">
           <Key>
@@ -509,7 +510,6 @@
           <EntitySetMapping Name="GiangViens">
             <EntityTypeMapping TypeName="QuanLyDeTaiModel.GiangVien">
               <MappingFragment StoreEntitySet="GiangVien">
-                <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
                 <ScalarProperty Name="MSGV" ColumnName="MSGV" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
                 <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
@@ -517,6 +517,7 @@
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
                 <ScalarProperty Name="Khoa" ColumnName="Khoa" />
                 <ScalarProperty Name="ChuyenNganh" ColumnName="ChuyenNganh" />
+                <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -542,7 +543,6 @@
           <EntitySetMapping Name="SinhViens">
             <EntityTypeMapping TypeName="QuanLyDeTaiModel.SinhVien">
               <MappingFragment StoreEntitySet="SinhVien">
-                <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
                 <ScalarProperty Name="Mssv" ColumnName="Mssv" />
                 <ScalarProperty Name="HoTen" ColumnName="HoTen" />
                 <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
@@ -551,6 +551,7 @@
                 <ScalarProperty Name="Khoa" ColumnName="Khoa" />
                 <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
                 <ScalarProperty Name="NamNhapHoc" ColumnName="NamNhapHoc" />
+                <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

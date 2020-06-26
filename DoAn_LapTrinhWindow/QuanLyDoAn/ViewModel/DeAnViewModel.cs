@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyDoAn.Controller
+namespace QuanLyDoAn.ViewModel
 {
-    public class DanhSachDeAn
+    public class DeAnViewModel
     {
         public string IDDeAn { get; set; }
         

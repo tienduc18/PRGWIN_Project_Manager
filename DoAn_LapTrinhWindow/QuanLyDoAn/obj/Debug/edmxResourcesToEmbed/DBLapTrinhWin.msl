@@ -31,7 +31,6 @@
     <EntitySetMapping Name="GiangViens">
       <EntityTypeMapping TypeName="QuanLyDeTaiModel.GiangVien">
         <MappingFragment StoreEntitySet="GiangVien">
-          <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
           <ScalarProperty Name="MSGV" ColumnName="MSGV" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
@@ -39,6 +38,7 @@
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="Khoa" ColumnName="Khoa" />
           <ScalarProperty Name="ChuyenNganh" ColumnName="ChuyenNganh" />
+          <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -64,7 +64,6 @@
     <EntitySetMapping Name="SinhViens">
       <EntityTypeMapping TypeName="QuanLyDeTaiModel.SinhVien">
         <MappingFragment StoreEntitySet="SinhVien">
-          <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
           <ScalarProperty Name="Mssv" ColumnName="Mssv" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
@@ -73,6 +72,7 @@
           <ScalarProperty Name="Khoa" ColumnName="Khoa" />
           <ScalarProperty Name="IDChuyenNganh" ColumnName="IDChuyenNganh" />
           <ScalarProperty Name="NamNhapHoc" ColumnName="NamNhapHoc" />
+          <ScalarProperty Name="DaXoa" ColumnName="DaXoa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

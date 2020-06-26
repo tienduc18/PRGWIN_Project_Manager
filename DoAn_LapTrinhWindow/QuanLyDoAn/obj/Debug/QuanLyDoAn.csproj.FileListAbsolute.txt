@@ -157,3 +157,52 @@ D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\
 D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\EntityFramework.SqlServer.xml
 D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.csproj.CopyComplete
 D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.csprojAssemblyReference.cache
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\QuanLyDoAn.exe.config
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\QuanLyDoAn.exe
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\QuanLyDoAn.pdb
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\EntityFramework.dll
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\EntityFramework.SqlServer.dll
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\EntityFramework.xml
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\EntityFramework.SqlServer.xml
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.csprojAssemblyReference.cache
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmAddDeAn.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmAddNhomSinhVien.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.frmAddOrUpdateGiangVien.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.frmAddStudent.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmGiangVien.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmMain.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmQuanLyDeAn.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.FrmTestDB.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.Properties.Resources.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmSinhVien.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmTienDo.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.frmUpdateStudent.resources
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.csproj.GenerateResource.cache
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.csproj.CoreCompileInputs.cache
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.csproj.CopyComplete
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.exe
+D:\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.pdb
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\QuanLyDoAn.exe.config
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\QuanLyDoAn.exe
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\QuanLyDoAn.pdb
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\EntityFramework.dll
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\EntityFramework.SqlServer.dll
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\EntityFramework.xml
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\bin\Debug\EntityFramework.SqlServer.xml
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmAddDeAn.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmAddNhomSinhVien.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.frmAddOrUpdateGiangVien.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.frmAddStudent.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmGiangVien.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmMain.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmQuanLyDeAn.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.FrmTestDB.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.Properties.Resources.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmSinhVien.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.FrmTienDo.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.View.frmUpdateStudent.resources
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.csproj.GenerateResource.cache
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.csproj.CoreCompileInputs.cache
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.csproj.CopyComplete
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.exe
+D:\University\HCMUTE\Semesters\second semester 2\courses\Programming on Windows\project\Quynh\PRGWIN_Project_Manager\DoAn_LapTrinhWindow\QuanLyDoAn\obj\Debug\QuanLyDoAn.pdb

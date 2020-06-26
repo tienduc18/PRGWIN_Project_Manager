@@ -60,13 +60,6 @@
     </Compile>
     <Compile Include="Controller\BaoCaoTienDoController.cs" />
     <Compile Include="Controller\ChuyenNganhController.cs" />
-    <Compile Include="Controller\DanhSachDeAn.cs" />
-    <Compile Include="Controller\DeAnController.cs" />
-    <Compile Include="Controller\GiangVienController.cs" />
-    <Compile Include="Controller\NhomController.cs" />
-    <Compile Include="Controller\QuanLyDoAnController.cs" />
-    <Compile Include="Controller\StudentController.cs" />
-    <Compile Include="Controller\TienDoBaoCao.cs" />
     <Compile Include="DBLapTrinhWin.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -103,6 +96,13 @@
     <Compile Include="Type.cs">
       <DependentUpon>DBLapTrinhWin.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\DeAnViewModel.cs" />
+    <Compile Include="Controller\DeAnController.cs" />
+    <Compile Include="Controller\GiangVienController.cs" />
+    <Compile Include="Controller\NhomController.cs" />
+    <Compile Include="Controller\QuanLyDoAnController.cs" />
+    <Compile Include="Controller\StudentController.cs" />
+    <Compile Include="Controller\TienDoBaoCao.cs" />
     <Compile Include="ViewModel\ChuyenNganhViewModel.cs" />
     <Compile Include="ViewModel\GiangVienViewModel.cs" />
     <Compile Include="ViewModel\SinhVienViewModel.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyDoAn.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
@@ -54,50 +55,25 @@ namespace QuanLyDoAn.Controller
                 return true;
             }
         }
-        //public static List<SinhVienViewModel> GetListStudent()
-        //{
-        //    using(var _context = new DBLapTrinhWin())
-        //    {
-        //        var model = _context.SinhViens;              
-
-        //        var result = model.Select(x => new SinhVienViewModel
-        //        {
-        //            Mssv = x.Mssv,
-        //            HoTen = x.HoTen,
-        //            NgaySinh = x.NgaySinh.HasValue ? x.NgaySinh.Value : DateTime.MinValue,
-        //            QueQuan = x.QueQuan,
-        //            GioiTinh = x.GioiTinh,
-        //            Khoa = x.Khoa,
-        //            ChuyenNganh = x.ChuyenNganh.TenChuyenNganh,
-        //            NamNhapHoc = x.NamNhapHoc,
-        //        }).ToList();
-
-        //        return result;
-        //    }
-        //}
-
-        public static List<SinhVien> GetListStudent()
+        public static List<SinhVienViewModel> GetListStudent()
         {
             using (var _context = new DBLapTrinhWin())
             {
-                var task = (from t in _context.SinhViens.Include("ChuyenNganh").AsEnumerable()
+                var model = (from t in _context.SinhViens
                             where t.DaXoa == false
                             select t)
-                            .Select(x => new SinhVien
+                            .Select(x => new SinhVienViewModel
                             {
                                 Mssv = x.Mssv,
                                 HoTen = x.HoTen,
-                                NgaySinh = x.NgaySinh,
+                                NgaySinh = x.NgaySinh ?? DateTime.MinValue,
                                 QueQuan = x.QueQuan,
                                 GioiTinh = x.GioiTinh,
-                                Khoa = x.Khoa,
-                                IDChuyenNganh = x.IDChuyenNganh,
                                 NamNhapHoc = x.NamNhapHoc,
-                                
-                                ChuyenNganh = x.ChuyenNganh
+                                ChuyenNganh = x.ChuyenNganh.TenChuyenNganh
                             }).ToList();
 
-                return task;
+                return model;
             }
         }
     }

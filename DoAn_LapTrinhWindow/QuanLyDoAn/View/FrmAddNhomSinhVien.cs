@@ -38,56 +38,114 @@ namespace QuanLyDoAn.View
             }
         }
 
+        public void SetErrorProvider()
+        {
+            if(string.IsNullOrEmpty(cbLoaiDoAn.Text))
+            {
+                cbLoaiDoAn.Focus();
+                this.errorProvider1.SetError(cbLoaiDoAn, "Bạn phải chọn loại đồ án!");
+            }
+            else
+            {
+                this.errorProvider1.SetError(cbLoaiDoAn, null);
+            }    
+
+            if(string.IsNullOrEmpty(txtTenNhom.Text))
+            {
+                txtTenNhom.Focus();
+                this.errorProvider1.SetError(txtTenNhom, "Bạn phải nhập tên nhóm!");
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtTenNhom, null);
+            }    
+
+            if(string.IsNullOrEmpty(txtThanhVienNhom.Text))
+            {
+                txtThanhVienNhom.Focus();
+                this.errorProvider1.SetError(txtThanhVienNhom, "Bạn phải nhập thành viên nhóm!");
+            }
+            else
+            {
+                this.errorProvider1.SetError(txtThanhVienNhom, null);
+            }
+
+            if (string.IsNullOrEmpty(cbMaMonHoc.Text))
+            {
+                cbMaMonHoc.Focus();
+                this.errorProvider1.SetError(cbMaMonHoc, "Bạn phải chọn mã môn học!");
+            }
+            else
+            {
+                this.errorProvider1.SetError(cbMaMonHoc, null);
+            }
+
+            if (string.IsNullOrEmpty(cbMaChuyenNganh.Text))
+            {
+                cbMaChuyenNganh.Focus();
+                this.errorProvider1.SetError(cbMaChuyenNganh, "Bạn phải chọn mã chuyên ngành!");
+            }
+            else
+            {
+                this.errorProvider1.SetError(cbMaChuyenNganh, null);
+            }
+        }
+
         private void btnAddNhom_Click(object sender, EventArgs e)
         {
-            using (var _context = new DBLapTrinhWin())
+            SetErrorProvider();
+            if(cbLoaiDoAn.Text != "" && txtTenNhom.Text != "" && txtThanhVienNhom.Text != "" 
+                && cbMaMonHoc.Text != "" && cbMaChuyenNganh.Text != "")
             {
-                if (cbLoaiDoAn.SelectedIndex == 0) ///  Tạo ID nhóm đồ án môn học
+                using (var _context = new DBLapTrinhWin())
                 {
-                    string s = "DAMH" + "-" + cbMaMonHoc.Text;
-                    var stt = from u in _context.NhomSinhViens
-                              where u.IDNhom.Contains(s)
-                              select u;
-                    int sttcuoicung = stt.Count();
-                    string Stt = NhomController.SoThuTuTiepTheo(sttcuoicung);
-                    txtIDNhom.Text = NhomController.CreateIDNhom("DAMH", cbMaMonHoc.Text, Stt);
-                }
-                else if(cbLoaiDoAn.SelectedIndex == 1) /// tạo ID nhóm tiểu luận chuyên ngành
-                {
-                    string s = "TLCN" + "-" + cbMaChuyenNganh.Text;
-                    var stt = from u in _context.NhomSinhViens
-                              where u.IDNhom.Contains(s)
-                              select u;
-                    int sttcuoicung = stt.Count();
-                    string Stt = NhomController.SoThuTuTiepTheo(sttcuoicung);
-                    txtIDNhom.Text = NhomController.CreateIDNhom("TLCN", cbMaChuyenNganh.Text,Stt);
+                    if (cbLoaiDoAn.SelectedIndex == 0) ///  Tạo ID nhóm đồ án môn học
+                    {
+                        string s = "DAMH" + "-" + cbMaMonHoc.Text;
+                        var stt = from u in _context.NhomSinhViens
+                                  where u.IDNhom.Contains(s)
+                                  select u;
+                        int sttcuoicung = stt.Count();
+                        string Stt = NhomController.SoThuTuTiepTheo(sttcuoicung);
+                        txtIDNhom.Text = NhomController.CreateIDNhom("DAMH", cbMaMonHoc.Text, Stt);
+                    }
+                    else if (cbLoaiDoAn.SelectedIndex == 1) /// tạo ID nhóm tiểu luận chuyên ngành
+                    {
+                        string s = "TLCN" + "-" + cbMaChuyenNganh.Text;
+                        var stt = from u in _context.NhomSinhViens
+                                  where u.IDNhom.Contains(s)
+                                  select u;
+                        int sttcuoicung = stt.Count();
+                        string Stt = NhomController.SoThuTuTiepTheo(sttcuoicung);
+                        txtIDNhom.Text = NhomController.CreateIDNhom("TLCN", cbMaChuyenNganh.Text, Stt);
 
+                    }
+                    else if (cbLoaiDoAn.SelectedIndex == 2)
+                    {
+                        string s = "DATN" + "-" + cbMaChuyenNganh.Text;
+                        var stt = from u in _context.NhomSinhViens
+                                  where u.IDNhom.Contains(s)
+                                  select u;
+                        int sttcuoicung = stt.Count();
+                        string Stt = NhomController.SoThuTuTiepTheo(sttcuoicung);
+                        txtIDNhom.Text = NhomController.CreateIDNhom("DATN", cbMaChuyenNganh.Text, Stt);
+                    }
                 }
-                else if(cbLoaiDoAn.SelectedIndex == 2)
+
+                NhomSinhVien nhom = new NhomSinhVien();
+                nhom.IDNhom = txtIDNhom.Text;
+                nhom.TenNhom = txtTenNhom.Text;
+                nhom.ThanhVien = txtThanhVienNhom.Text;
+                using (var _context = new DBLapTrinhWin())
                 {
-                    string s = "DATN" + "-" + cbMaChuyenNganh.Text;
-                    var stt = from u in _context.NhomSinhViens
-                              where u.IDNhom.Contains(s)
-                              select u;
-                    int sttcuoicung = stt.Count();
-                    string Stt = NhomController.SoThuTuTiepTheo(sttcuoicung);
-                    txtIDNhom.Text = NhomController.CreateIDNhom("DATN", cbMaChuyenNganh.Text, Stt);
+                    _context.NhomSinhViens.Add(nhom);
+                    _context.SaveChanges();
                 }
+
+                DangKyNhomThanhCongEventArgs arg = new DangKyNhomThanhCongEventArgs { IdNhom = txtIDNhom.Text };
+                OnDangKyNhomThanhCong(arg);
+                this.Close();
             }
-
-            NhomSinhVien nhom = new NhomSinhVien();
-            nhom.IDNhom = txtIDNhom.Text;
-            nhom.TenNhom = txtTenNhom.Text;
-            nhom.ThanhVien = txtThanhVienNhom.Text;
-            using (var _context = new DBLapTrinhWin())
-            {
-                _context.NhomSinhViens.Add(nhom);
-                _context.SaveChanges();
-            }
-
-            FrmAddDeAn frm = new FrmAddDeAn(this.txtIDNhom.Text);
-            frm.Show();
-            this.Close();
         }
 
         private void txtFindMSSV_TextChanged(object sender, EventArgs e)
@@ -97,7 +155,7 @@ namespace QuanLyDoAn.View
             {
                 string s = txtFindMSSV.Text;
                 var x = (from u in _context.SinhViens
-                         where u.Mssv.Contains(s)
+                         where u.Mssv.Contains(s) && u.DaXoa == false
                          select u);
                 foreach(var i in x)
                 {
@@ -116,10 +174,38 @@ namespace QuanLyDoAn.View
         {
             string[] tach;
             tach = lstViewThanhVienNhom.SelectedItems[0].Text.Split(':');
-            string s = txtThanhVienNhom.Text + "," + tach[0]; ;
+            string s = txtThanhVienNhom.Text + "," + tach[0];
             s = s.TrimStart(',');
             txtThanhVienNhom.Text = s;
-            
+
+            //lstThanhVienNhom.Items.Add(lstViewThanhVienNhom.SelectedItems[0].Text);
         }
+
+        //khai báo 1 sự kiện có kiểu tham số là DangKyNhomThanhCongEventArgs
+        public event EventHandler<DangKyNhomThanhCongEventArgs> DangKyNhomThanhCong;
+
+        protected virtual void OnDangKyNhomThanhCong(DangKyNhomThanhCongEventArgs e)
+        {
+            //thông báo cho biết là sự kiện đã được kích hoạt
+            EventHandler<DangKyNhomThanhCongEventArgs> handler = DangKyNhomThanhCong;
+            
+            if(handler != null)
+            {
+                handler(this, e);
+            }
+        }
+
+        //private void lstThanhVienNhom_DoubleClick(object sender, EventArgs e)
+        //{
+        //    if(lstThanhVienNhom.SelectedIndex >= 0)
+        //    {
+        //        this.lstThanhVienNhom.Items.RemoveAt(lstThanhVienNhom.SelectedIndex);
+        //    }    
+        //}
+    }
+
+    public class DangKyNhomThanhCongEventArgs : EventArgs  //tham số sự kiện dùng để truyền dữ liệu 
+    {
+        public string IdNhom { get; set; }
     }
 }

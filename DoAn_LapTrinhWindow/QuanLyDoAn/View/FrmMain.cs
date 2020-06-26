@@ -17,9 +17,7 @@ namespace QuanLyDoAn.View
         FrmSinhVien frmSinhVien;
         FrmGiangVien frmGiangVien;
         FrmQuanLyDeAn frmDeAn;
-        private List<SinhVien> sinhViens;
         private List<ChuyenNganh> chuyenNganhs;
-        private List<GiangVien> giangViens;
         private List<DeAn> deAns;
         private List<MonHoc> monHocs;
         private List<NhomSinhVien> nhomSinhViens;
@@ -29,15 +27,13 @@ namespace QuanLyDoAn.View
         public FrmMain()
         {
             InitializeComponent();
-            sinhViens = StudentController.GetListStudent();
-            giangViens = GiangVienController.GetListGiangVien();
         }
 
         private void MenuSinhVien_Click(object sender, EventArgs e)
         {
             if(this.frmSinhVien is null || this.frmSinhVien.IsDisposed)
             {
-                this.frmSinhVien = new FrmSinhVien(ref sinhViens);
+                this.frmSinhVien = new FrmSinhVien();
                 this.frmSinhVien.MdiParent = this;
                 this.frmSinhVien.Show();
             }
@@ -51,7 +47,7 @@ namespace QuanLyDoAn.View
         {
             if(this.frmGiangVien is null || this.frmGiangVien.IsDisposed)
             {
-                this.frmGiangVien = new FrmGiangVien(ref giangViens, chuyenNganhs);
+                this.frmGiangVien = new FrmGiangVien();
                 this.frmGiangVien.MdiParent = this;
                 this.frmGiangVien.Show();
             }
@@ -65,7 +61,7 @@ namespace QuanLyDoAn.View
         {
             if(this.frmDeAn is null || this.frmDeAn.IsDisposed)
             {
-                this.frmDeAn = new FrmQuanLyDeAn(ref deAns, chuyenNganhs, giangViens, monHocs, nhomSinhViens, types, tienDos);
+                this.frmDeAn = new FrmQuanLyDeAn();
                 this.frmDeAn.MdiParent = this;
                 this.frmDeAn.Show();
             }

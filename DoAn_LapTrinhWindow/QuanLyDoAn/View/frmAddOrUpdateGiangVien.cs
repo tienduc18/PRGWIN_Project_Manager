@@ -50,7 +50,6 @@ namespace QuanLyDoAn.View
 
             txtQueQuan.Text = giangVien.QueQuan;
             cbGioiTinh.Text = giangVien.GioiTinh;
-            //txtKhoa.Text = giangVien.Khoa;
             cbxChuyenNganh.SelectedIndex = chuyenNganhs.IndexOf(chuyenNganhs.Where(x => x.IDChuyenNganh == giangVien.ChuyenNganh).FirstOrDefault());
         }
 
@@ -83,7 +82,6 @@ namespace QuanLyDoAn.View
                         NgaySinh = DateTime.Parse(dtpNgaySinh.Value.ToString()), 
                         QueQuan = txtQueQuan.Text,
                         GioiTinh = cbGioiTinh.Text,
-                        //Khoa = txtKhoa.Text,
                         ChuyenNganh = ((ChuyenNganhViewModel)cbxChuyenNganh.SelectedItem).IDChuyenNganh,
                         DaXoa = false
                     };
@@ -119,7 +117,6 @@ namespace QuanLyDoAn.View
                     updateGV.NgaySinh = dtpNgaySinh.Value;
                     updateGV.QueQuan = txtQueQuan.Text;
                     updateGV.GioiTinh = cbGioiTinh.Text;
-                    //updateGV.Khoa = txtKhoa.Text;
                     updateGV.ChuyenNganh = ((ChuyenNganhViewModel)cbxChuyenNganh.SelectedItem).IDChuyenNganh;
                     updateGV.DaXoa = false;
                 }
