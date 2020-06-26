@@ -27,22 +27,6 @@ namespace QuanLyDoAn.Controller
             }
             return s;
         }
-        public static List<SinhVien> GetListThanhVienNhom(string s)
-        {
-            List<SinhVien> thanhviennhom = new List<SinhVien>();
-            string[] phantach = s.Split(',');
-            using (var _context = new DBLapTrinhWin())
-            {
-                foreach (var x in phantach)
-                {
-                    var sinhvien = (from u in _context.SinhViens
-                                   where u.Mssv == x
-                                   select u).FirstOrDefault();
-                    thanhviennhom.Add(sinhvien);
-                }
-            }
-            return thanhviennhom;
-        }
 
         public static List<string> GetDanhSachThanhVien(string s)
         {

@@ -134,7 +134,7 @@ namespace QuanLyDoAn.View
                 DeAnDangKy.IDNhomSV = IDnhom;
                 DeAnDangKy.GVHD = txtGVHD.Text.Trim();
                 DeAnDangKy.MoTa = txtMoTa.Text;
-                if (type == "0")
+                if (type == "1")
                     DeAnDangKy.MonHoc = cacthuoctinh[1];
                 else
                     DeAnDangKy.ChuyenNganh = cacthuoctinh[1];

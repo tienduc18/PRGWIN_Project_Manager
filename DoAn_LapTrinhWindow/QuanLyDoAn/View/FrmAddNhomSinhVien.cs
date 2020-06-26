@@ -177,8 +177,6 @@ namespace QuanLyDoAn.View
             string s = txtThanhVienNhom.Text + "," + tach[0];
             s = s.TrimStart(',');
             txtThanhVienNhom.Text = s;
-
-            //lstThanhVienNhom.Items.Add(lstViewThanhVienNhom.SelectedItems[0].Text);
         }
 
         //khai báo 1 sự kiện có kiểu tham số là DangKyNhomThanhCongEventArgs
@@ -194,14 +192,6 @@ namespace QuanLyDoAn.View
                 handler(this, e);
             }
         }
-
-        //private void lstThanhVienNhom_DoubleClick(object sender, EventArgs e)
-        //{
-        //    if(lstThanhVienNhom.SelectedIndex >= 0)
-        //    {
-        //        this.lstThanhVienNhom.Items.RemoveAt(lstThanhVienNhom.SelectedIndex);
-        //    }    
-        //}
     }
 
     public class DangKyNhomThanhCongEventArgs : EventArgs  //tham số sự kiện dùng để truyền dữ liệu 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyDoAn.Controller;
+using QuanLyDoAn.ViewModel;
 
 namespace QuanLyDoAn.View
 {

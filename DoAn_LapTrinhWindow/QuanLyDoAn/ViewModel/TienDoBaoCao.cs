@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLyDoAn.Controller
+namespace QuanLyDoAn.ViewModel
 {
     public class TienDoBaoCao
     {

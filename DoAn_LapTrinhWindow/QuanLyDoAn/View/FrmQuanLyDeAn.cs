@@ -26,9 +26,6 @@ namespace QuanLyDoAn.View
             this.cMoTa.DataPropertyName = nameof(DeAnViewModel.MoTa);
             this.cMonHoc.DataPropertyName = nameof(DeAnViewModel.TenMonHoc);
             this.cChuyenNganh.DataPropertyName = nameof(DeAnViewModel.TenChuyenNganh);
-
-            //this.cCacThanhVien.DataPropertyName = nameof(DanhSachDeAn.DanhSachThanhVien);
-
             this.cThanhVien.DataPropertyName = nameof(DeAnViewModel.StringThanhVien);
             this.cGVHD.DataPropertyName = nameof(DeAnViewModel.HoTenGV);
             this.cDateStart.DataPropertyName = nameof(DeAnViewModel.DateStart);
@@ -109,17 +106,6 @@ namespace QuanLyDoAn.View
                 }
                 
                 this.dtgDeAn.DataSource = y;
-
-                ComboBox test = new ComboBox();
-                
-                
-               
-
-
-                // Xử lý cột combobox trong datagridview
-                
-               
-
             }
         }
 
@@ -154,14 +140,9 @@ namespace QuanLyDoAn.View
             DataGridView data = sender as DataGridView;
             List<DeAnViewModel> source =(sender as DataGridView).DataSource as List<DeAnViewModel>;
             for(int i=0;i< data.Rows.Count;i++)
-            
             {
                  for (int j=0;j<source[i].DanhSachThanhVien.Count;j++)
                     (data.Rows[i].Cells[0] as DataGridViewComboBoxCell).Items.Add(source[i].DanhSachThanhVien[j]);
-                
-                //(data.Rows[i].Cells[0] as DataGridViewComboBoxCell).Items.Add(source[i].DanhSachThanhVien);
-
-
             }
             
             
@@ -213,16 +194,6 @@ namespace QuanLyDoAn.View
                 }
 
                 this.dtgDeAn.DataSource = x;
-
-
-
-
-
-
-                // Xử lý cột combobox trong datagridview
-
-
-
             }
         }
     }
